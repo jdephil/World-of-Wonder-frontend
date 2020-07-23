@@ -1,11 +1,11 @@
 import React from 'react';
 
-const componentName = () => {
+const Office = () => {
     return (
         <div>
-            
+            TEST
         </div>
     );
 };
 
-export default componentName;
+export default Office;
