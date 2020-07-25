@@ -1,10 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Office = () => {
+
     return (
-        <div class = "container">
-            <img src='./office1.png' alt='Office with artifacts'/>
-        </div>
+            <main class = "container">
+                <Link to='/ancientEgypt'>Ancient Egypt</Link>
+                <Link to='/pacific'>Pacific</Link>
+                <Link to='/nativeAmerican'>Native American</Link>
+                <img src='./office1.png' alt='Office with artifacts'/>
+                
+            </main>
     );
 };
 
