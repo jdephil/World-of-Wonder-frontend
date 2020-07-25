@@ -3,7 +3,7 @@ import React from 'react';
 const Office = () => {
     return (
         <div class = "container">
-            Office
+            <img src='./office1.png' alt='Office with artifacts'/>
         </div>
     );
 };
