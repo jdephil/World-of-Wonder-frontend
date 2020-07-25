@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Office = () => {
+const Profile = () => {
     return (
         <div class = "container">
-            Office
+            Profile
         </div>
     );
 };
 
-export default Office;
+export default Profile;
