@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import About from './components/About';
 import Profile from './components/Profile'
 import Footer from './components/Footer'
+import Pacific from './components/Pacific'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/office" exact component={Office} />
           <Route path="/about" exact component={About} />
           <Route path="/profile" exact component={Profile} />
+          <Route path="/pacific" exact component={Pacific} />
         </Switch>
       </BrowserRouter>
       <Footer />
