@@ -18,7 +18,6 @@ export class Navbar extends Component {
                     <Link className="brand-logo" exact to="/"><div>World of Wonder</div></Link>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><NavLink to="/about">About</NavLink></li>
                         {/* <li><NavLink to="/collections">Collections</NavLink></li> */}
                         <li><NavLink to="/profile">Profile</NavLink></li>
                         <li><NavLink to="/office">Office</NavLink></li>
@@ -27,7 +26,6 @@ export class Navbar extends Component {
 
                 {/* Burger menu */}
                 <ul class="sidenav" id="mobile-demo">
-                    <li><NavLink to="/about">About</NavLink></li>
                     {/* <li><NavLink to="/collections">Collections</NavLink></li> */}
                     <li><NavLink to="/profile">Profile</NavLink></li>
                     <li><NavLink to="/office">Office</NavLink></li>
