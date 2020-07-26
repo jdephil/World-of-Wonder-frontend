@@ -1,0 +1,40 @@
+header{
+    border:5px solid blue;
+}
+
+main{
+    border:5px solid green;
+}
+
+body{
+    background-image: url("https://www.imb.org/wp-content/uploads/2018/05/20180206MP123.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 110vh;
+}
+
+.cosmetic {
+    height:128px;
+    width:128px;
+}
+
+.mummy{
+    height:512px;
+    width:128px;
+}
+
+.mummies{
+    height:128px;
+    width:256px;
+}
+
+.slipper {
+    height:128px;
+    width:256px;
+}
+
+.writing{
+    height:64px;
+    width:256px;
+}
