@@ -7,6 +7,9 @@ import Navbar from './components/Navbar'
 import About from './components/About';
 import Profile from './components/Profile'
 import Footer from './components/Footer'
+import AncientEgypt from './components/AncientEgypt'
+import Pacific from './components/Pacific'
+import NativeAmerican from './components/NativeAmerican'
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
           <Route path="/office" exact component={Office} />
           <Route path="/" exact component={About} />
           <Route path="/profile" exact component={Profile} />
+          <Route path='/ancientEgypt' component={AncientEgypt} />
+          <Route path='/pacific' component={Pacific} />
+          <Route path='/nativeAmerican' component={NativeAmerican} />
         </Switch>
       </BrowserRouter>
 
