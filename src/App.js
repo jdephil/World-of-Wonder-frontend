@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './components/Footer.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Office from './components/Office'
 import Navbar from './components/Navbar'
@@ -18,6 +19,7 @@ function App() {
           <Route path="/profile" exact component={Profile} />
         </Switch>
       </BrowserRouter>
+
       <Footer />
     </div>
   );
