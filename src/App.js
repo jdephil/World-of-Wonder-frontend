@@ -17,6 +17,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Switch>
+          <Route path='/pacific' component={Pacific} />
+          <Route path='/nativeAmerican' component={NativeAmerican} />
+          <Route path='/ancientEgypt' exact component={AncientEgypt} />
           <Route path="/office" exact component={Office} />
           <Route path="/" exact component={About} />
           <Route path="/profile" exact component={Profile} />
