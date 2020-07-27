@@ -1,0 +1,64 @@
+.pacificDiv {
+  max-width: 1024px;
+}
+
+.pacificArtifact {
+  width: 10%;
+}
+
+.pacificRoomImg {
+  width: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+@media screen and (min-width: 1025px) {
+  .danceDress {
+    top: 291px;
+    left: 875px;
+    position: absolute;
+  }
+
+  .fan {
+    width: 5%;
+    position: absolute;
+    top: 293px;
+    left: 581px;
+  }
+
+  .kite {
+    position: absolute;
+    top: 248px;
+    left: 729px;
+  }
+
+  .canoe {
+    position: absolute;
+    top: 20px;
+    left: 800px;
+  }
+
+  .wovenMat {
+    position: absolute;
+    top: 20px;
+    left: 800px;
+  }
+
+  .waistGarment {
+    position: absolute;
+    top: 20px;
+    left: 800px;
+  }
+
+  .fishingHook {
+    position: absolute;
+    top: 20px;
+    left: 800px;
+  }
+
+  .fishingBox {
+    position: absolute;
+    top: 20px;
+    left: 800px;
+  }
+}
