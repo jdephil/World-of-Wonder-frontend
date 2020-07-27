@@ -1,3 +1,6 @@
+Image credits: 
+https://commons.wikimedia.org/wiki/File:Ceramic_Sculpture_Exhibition_(16366462269).jpg
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
