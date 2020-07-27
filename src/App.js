@@ -9,6 +9,7 @@ import Profile from './components/Profile'
 import Footer from './components/Footer'
 import Pacific from './components/Pacific'
 import NativeAmerican from './components/NativeAmerican'
+import AncientEgypt from './components/AncientEgypt'
 
 function App() {
   return (
@@ -19,13 +20,9 @@ function App() {
           <Route path="/office" exact component={Office} />
           <Route path="/" exact component={About} />
           <Route path="/profile" exact component={Profile} />
-<<<<<<< HEAD
           <Route path='/ancientEgypt' component={AncientEgypt} />
           <Route path='/pacific' component={Pacific} />
           <Route path='/nativeAmerican' component={NativeAmerican} />
-=======
-          <Route path="/pacific" exact component={Pacific} />
->>>>>>> jens-branch
         </Switch>
       </BrowserRouter>
 

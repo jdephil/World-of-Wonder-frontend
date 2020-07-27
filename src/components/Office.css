@@ -1,17 +1,12 @@
-
 .egyptPortalLink {
   border: solid 3px white;
   height: 100px;
   width: 150px;
   position: absolute;
-
-body {
-  
 }
 
 .officeDiv {
   max-width: 1200px;
-  
 }
 
 .officeImg {
