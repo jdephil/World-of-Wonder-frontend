@@ -1,17 +1,9 @@
-header{
-    border:5px solid blue;
-}
-
-main{
-    border:5px solid green;
-}
-
 body{
     background-image: url("https://www.imb.org/wp-content/uploads/2018/05/20180206MP123.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 110vh;
+    min-height: 115vh;
 }
 
 .cosmetic {
@@ -19,9 +11,14 @@ body{
     width:128px;
 }
 
+.beads{
+    height:128px;
+    width:80px;
+}
+
 .mummy{
-    height:512px;
-    width:128px;
+    height:256px;
+    width:100px;
 }
 
 .mummies{
@@ -30,11 +27,44 @@ body{
 }
 
 .slipper {
-    height:128px;
-    width:256px;
+    height:64px;
+    width:128px;
 }
 
 .writing{
-    height:64px;
-    width:256px;
+    height:128px;
+    width:512px;
+}
+
+.banner {
+    text-align: center;
+}
+
+.row {
+    width:100%;
+}
+
+.midRow {
+    margin-top: 10em;
+    border:2px solid green;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botRow{
+    border:5px solid yellow;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.egypt{
+    border:5px solid yellow;
+    height:100vh;
+    width:70%;
+    margin: 0 auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+	align-items: center;
 }
