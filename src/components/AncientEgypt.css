@@ -1,9 +1,9 @@
 body{
-    background-image: url("https://www.imb.org/wp-content/uploads/2018/05/20180206MP123.jpg");
+    /* background-image: url("https://www.imb.org/wp-content/uploads/2018/05/20180206MP123.jpg"); */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 115vh;
+    /* min-height: 115vh; */
 }
 
 .cosmetic {

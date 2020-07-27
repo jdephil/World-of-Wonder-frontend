@@ -1,64 +1,220 @@
+
+
 .pacificDiv {
   max-width: 1024px;
+  margin: 0 auto;
 }
 
 .pacificArtifact {
   width: 10%;
+  position: absolute;
 }
 
 .pacificRoomImg {
-  width: 100%;
+  justify-content: center;
   position: relative;
   z-index: -1;
+  margin: 0 auto;
+  width: 100%;
 }
 
-@media screen and (min-width: 1025px) {
+.canoe {
+  width: 20%;
+}
+
+.fan {
+  width: 5%;
+}
+
+.fishingBox {
+  width: 5%;
+}
+
+.fishingHook {
+  width: 3%;
+}
+
+.waistGarment {
+  width: 8%;
+}
+
+@media screen and (min-width: 1501px) {
   .danceDress {
-    top: 291px;
-    left: 875px;
-    position: absolute;
+    top: 8vw;
+    left: 70vw;
   }
 
   .fan {
-    width: 5%;
-    position: absolute;
-    top: 293px;
-    left: 581px;
+    top: 12vw;
+    left: 48vw;
   }
 
   .kite {
-    position: absolute;
-    top: 248px;
-    left: 729px;
+    width: 16%;
+    top: 4vw;
+    left: 19vw;
   }
 
   .canoe {
-    position: absolute;
-    top: 20px;
-    left: 800px;
+    top: 27vw;
+    left: 19vw;
   }
+  
 
   .wovenMat {
-    position: absolute;
-    top: 20px;
-    left: 800px;
+    top: 15vw;
+    left: 55vw;
+    width: 7%;
   }
 
   .waistGarment {
-    position: absolute;
-    top: 20px;
-    left: 800px;
+    top: 8vw;
+    left: 63vw;
+    
   }
 
   .fishingHook {
-    position: absolute;
-    top: 20px;
-    left: 800px;
+    top: 37vw;
+    left: 33vw;
   }
 
   .fishingBox {
-    position: absolute;
-    top: 20px;
-    left: 800px;
+    top: 34vw;
+    left: 34vw;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .danceDress {
+    top: 12vw;
+    left: 75vw;
+  }
+
+  .fan {
+    top: 12vw;
+    left: 49vw;
+  }
+
+  .kite {
+    width: 16%;
+    top: 4vw;
+    left: 17vw;
+  }
+
+  .canoe {
+    top: 32vw;
+    left: 16vw;
+  }
+  
+
+  .wovenMat {
+    top: 17vw;
+    left: 58vw;
+    width: 7%;
+  }
+
+  .waistGarment {
+    top: 9vw;
+    left: 67vw;
+    
+  }
+
+  .fishingHook {
+    top: 42vw;
+    left: 31vw;
+  }
+
+  .fishingBox {
+    top: 38vw;
+    left: 34vw;
+  }
+}
+
+@media screen and (max-width: 1342px) {
+  .fishingHook {
+    top: 46vw;
+    left: 31vw;
+  }
+
+  .fishingBox {
+    top: 41vw;
+    left: 34vw;
+  }
+
+  .canoe {
+    top: 35vw;
+    left: 16vw;
+  }
+}
+
+@media screen and (max-width: 1268px) {
+  .fishingHook {
+    top: 49vw;
+    left: 31vw;
+  }
+
+  .fishingBox {
+    top: 44vw;
+    left: 34vw;
+  }
+
+  .canoe {
+    top: 37vw;
+    left: 16vw;
+  }
+
+  .kite {
+    width: 16%;
+    top: 5vw;
+    left: 14vw;
+  }
+
+  .fan {
+    top: 15vw;
+   
+  }
+}
+
+@media screen and (max-width: 1201px) {
+  .danceDress {
+    top: 16vw;
+    left: 80vw;
+  }
+
+  .fan {
+   top: 17vw;
+   left: 53vw;
+  }
+
+  .kite {
+    width: 16%;
+    top: 9vw;
+    left: 10vw;
+  }
+
+  .canoe {
+    top: 43vw;
+    left: 12vw;
+  }
+
+  .wovenMat {
+    top: 20vw;
+    left: 62vw;
+    width: 8%;
+  }
+
+  .waistGarment {
+    top: 12vw;
+    left: 72vw;
+  }
+
+  .fishingHook {
+    top: 55vw;
+    left: 26vw;
+  }
+
+  .fishingBox {
+    top: 49vw;
+    left: 30vw;
   }
 }
