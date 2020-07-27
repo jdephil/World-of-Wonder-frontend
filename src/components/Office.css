@@ -1,20 +1,52 @@
+
 .egyptPortalLink {
   border: solid 3px white;
   height: 100px;
   width: 150px;
   position: absolute;
+
+body {
+  
 }
 
-.pacificPortalLink {
-  border: solid 3px red;
-  height: 150px;
-  width: 100px;
-  position: absolute;
+.officeDiv {
+  max-width: 1200px;
+  
 }
 
-.nativePortalLink {
-  border: solid 3px blue;
-  height: 200px;
-  width: 200px;
-  position: absolute;
+.officeImg {
+  position: relative;
+  width: 100%;;
+  z-index: -1;
+
 }
+
+@media screen and (min-width: 1201px) {
+  .nativePortalLink {
+    border: solid 3px green;
+    padding-bottom: 190px;
+    padding-left: 120px;
+    top: 100px;
+    left: 100px;
+    position: relative;
+  }
+
+  .egyptPortalLink {
+    border: solid 3px blue;
+    padding-bottom: 100px;
+    padding-right: 195px;
+    top: 275px;
+    left: 1000px;
+    position: relative;
+  }
+
+  .pacificPortalLink {
+    border: solid 3px red;
+    height: 250px;
+    width: 125px;
+    top: 425px;
+    left: 325px;
+    position: absolute;
+  }
+}
+

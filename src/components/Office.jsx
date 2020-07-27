@@ -6,10 +6,12 @@ const Office = () => {
 
     return (
             <main>
-                <Link className='egyptPortalLink col l6' to='/ancientEgypt'>Ancient Egypt</Link>
-                <Link className='pacificPortalLink' to='/pacific'>Pacific</Link>
-                <Link className='nativePortalLink' to='/nativeAmerican'>Native American</Link>
-                <img src='./office1.png' alt='Office with artifacts'/>
+                <div className='officeDiv'>
+                    <Link className='egyptPortalLink' to='/ancientEgypt'></Link>
+                    <Link className='pacificPortalLink' to='/pacific'></Link>
+                    <Link className='nativePortalLink' to='/nativeAmerican'></Link>
+                    <img className='officeImg' src='./office1.png' alt='Office with artifacts'/>
+                </div>
             </main>
     );
 };
