@@ -1,11 +1,3 @@
-body{
-    /* background-image: url("https://www.imb.org/wp-content/uploads/2018/05/20180206MP123.jpg"); */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    /* min-height: 115vh; */
-}
-
 .cosmetic {
     height:128px;
     width:128px;
@@ -41,27 +33,38 @@ body{
 }
 
 .row {
+    border:5px solid lightblue;
     width:100%;
 }
 
 .midRow {
+    border:5px solid yellow;
     margin-top: 10em;
-    border:2px solid green;
     display:flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .botRow{
-    border:5px solid yellow;
     display: flex;
     justify-content: space-evenly;
 }
 
 .egypt{
-    border:5px solid yellow;
-    height:100vh;
+    background-image: url("https://www.imb.org/wp-content/uploads/2018/05/20180206MP123.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 110vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+	align-items: center;
+}
+
+.egyptArtifacts{
     width:70%;
+    min-height: 95vh;
     margin: 0 auto;
     display:flex;
     flex-direction:column;
