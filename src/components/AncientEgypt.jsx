@@ -3,32 +3,17 @@ import './AncientEgypt.css'
 
 const AncientEgypt = () => {
     return (
-            <div class="egypt col s12 m6 l12">
-                <div class="egyptArtifacts">
-                    <div class="row">
-                        <div className="col s12 m6 l12 banner">
-                            <img className="writing hoverable" src="/wall-hanging-egypt.png" alt="" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 m6 l10 midRow">
-                            <img className="mummy hoverable left" src="/mummy-egypt.png" alt="" />
-
-                            <img className="mummies hoverable right" src="/mummy2-egypt.png" alt="" />
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col s12 m6 l12 botRow">
-                            <img className="slipper" src="/slippers-egypt.png" alt="" />
-                            <img className="cosmetic" src="/writings-egypt.png" alt="" />
-                            <img src="/cosmetics-egypt.png" className="cosmetic" alt="" />
-                            <img src="mummified-birds-egypt.png" className="cosmetic" alt="" />
-                            <img src="funeral-beads-egypt.png" className="cosmetic" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="egyptDiv">
+            <img className="egyptArtifact wallHanging" src="egypt/wall-hanging-egypt.png" alt="wall hanging" />
+            <img className="egyptArtifact mummies" src="egypt/mummy2-egypt.png" alt="mummy" />
+            <img className="egyptArtifact slippers" src="egypt/slippers-egypt.png" alt="slippers" />
+            <img className="egyptArtifact cosmetics" src="egypt/cosmetics-egypt.png" alt="cosmetics" />
+            <img className='egyptArtifact writings' src="egypt/writings-egypt.png" alt="writings" />
+            <img className="egyptArtifact mummifiedBirds" src="egypt/mummified-birds-egypt.png" alt="mummified birds" />
+            <img className="egyptArtifact funeralBeads" src="egypt/funeral-beads-egypt.png"  alt="funeral beads" />
+            <img className="egyptRoomImg" src="egypt/egypt-room.jpg" alt="ancient egyptian museum room"/>
+        </div>
+                   
     );
 };
 

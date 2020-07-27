@@ -1,73 +1,262 @@
-.cosmetic {
-    height:128px;
-    width:128px;
-}
-
-.beads{
-    height:128px;
-    width:80px;
-}
-
-.mummy{
-    height:256px;
-    width:100px;
-}
-
-.mummies{
-    height:128px;
-    width:256px;
-}
-
-.slipper {
-    height:64px;
-    width:128px;
-}
-
-.writing{
-    height:128px;
-    width:512px;
-}
-
-.banner {
-    text-align: center;
-}
-
-.row {
-    border:5px solid lightblue;
-    width:100%;
-}
-
-.midRow {
-    border:5px solid yellow;
-    margin-top: 10em;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.botRow{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.egypt{
-    background-image: url("https://www.imb.org/wp-content/uploads/2018/05/20180206MP123.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 110vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-	align-items: center;
-}
-
-.egyptArtifacts{
-    width:70%;
-    min-height: 95vh;
+.egyptDiv {
+    max-width: 1024px;
     margin: 0 auto;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-	align-items: center;
-}
+  }
+  
+  .egyptArtifact {
+    width: 10%;
+    position: absolute;
+  }
+  
+  .egyptRoomImg {
+    justify-content: center;
+    position: relative;
+    z-index: -1;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1024px;
+  }
+
+  .cosmetics {
+      width: 3%;
+  }
+
+  .mummifiedBirds {
+      width: 6%;
+  }
+
+  .slippers {
+      width: 4%;
+  }
+
+  .wallHanging {
+      width: 30%;
+  }
+
+  .writings {
+      width: 8%;
+  }
+  @media screen and (min-width: 1560px) {
+      
+    .cosmetics {
+        top: 25vw;
+        left: 66vw;
+    }
+    
+    .funeralBeads {
+          top: 21vw;
+          left: 70vw;
+      }
+
+      .mummifiedBirds {
+        top: 26vw;
+        left: 47vw;
+        
+      }
+
+      .mummies {
+        top: 22vw;
+        left: 29vw;
+      }
+
+      .slippers {
+        top: 29vw;
+        left: 37vw;
+      }
+
+      .wallHanging {
+        left: 35vw;
+      }
+
+      .writings {
+          top: 25vw;
+          left: 20vw;
+      }
+  }
+
+  @media screen and (max-width: 1559px) {
+      
+    .cosmetics {
+        top: 27vw;
+        left: 66vw;
+    }
+    
+    .funeralBeads {
+        top: 24vw;
+        left: 73vw;
+      }
+
+      .mummifiedBirds {
+        top: 29vw;
+        left: 46vw;
+        width: 6%;
+      }
+
+      .mummies {
+        top: 24vw;
+        left: 27vw;
+      }
+
+      .slippers {
+        top: 32vw;
+        left: 36vw;
+      }
+
+      .wallHanging {
+        left: 35vw;
+      }
+
+      .writings {
+        top: 28vw;
+        left: 17vw;
+      }
+  }
+
+  @media screen and (max-width: 1435px) {
+      
+    .cosmetics {
+        top: 29vw;
+        left: 68vw;
+    }
+    
+    .funeralBeads {
+        top: 29vw;
+        left: 75vw;
+      }
+
+      .mummifiedBirds {
+        top: 32vw;
+        left: 47vw;
+        width: 6%;
+      }
+
+      .mummies {
+        top: 27vw;
+        left: 26vw;
+      }
+
+      .slippers {
+        top: 35vw;
+        left: 35vw;
+      }
+
+      .wallHanging {
+        left: 35vw;
+      }
+
+      .writings {
+        top: 30vw;
+        left: 15vw;
+      }
+  }
+
+  @media screen and (max-width: 1300px) {
+      
+    .cosmetics {
+        top: 32vw;
+        left: 69vw;
+    }
+    
+    .funeralBeads {
+        top: 31vw;
+        left: 78vw;
+      }
+
+      .mummifiedBirds {
+        top: 37vw;
+        
+      }
+
+      .mummies {
+        top: 30vw;
+        left: 24vw;
+      }
+
+      .slippers {
+        top: 38vw;
+        left: 33vw;
+      }
+
+      .wallHanging {
+        left: 35vw;
+      }
+
+      .writings {
+        top: 34vw;
+        left: 12vw;
+      }
+  }
+
+  @media screen and (max-width: 1150px) {
+      
+    .cosmetics {
+        top: 37vw;
+        left: 72vw;
+    }
+    
+    .funeralBeads {
+        top: 36vw;
+        left: 82vw;
+      }
+
+      .mummifiedBirds {
+        top: 41vw;
+        
+      }
+
+      .mummies {
+        top: 35vw;
+        left: 20vw;
+      }
+
+      .slippers {
+        top: 44vw;
+        left: 31vw;
+      }
+
+      .wallHanging {
+        left: 35vw;
+      }
+
+      .writings {
+        top: 39vw;
+        left: 6vw;
+      }
+  }
+
+  @media screen and (max-width: 1000px) {
+      
+    .cosmetics {
+            top: 25vw;
+    left: 66vw;
+    }
+    
+    .funeralBeads {
+        top: 42vw;
+        left: 85vw;
+      }
+
+      .mummifiedBirds {
+        top: 47vw;
+        
+      }
+
+      .mummies {
+        top: 39vw;
+        left: 17vw;
+      }
+
+      .slippers {
+        top: 49vw;
+        left: 29vw;
+      }
+
+      .wallHanging {
+        left: 35vw;
+      }
+
+      .writings {
+        top: 44vw;
+        left: 2vw;
+      }
+  }
