@@ -9,11 +9,11 @@ const Pacific = () => {
         imageURL: ""
       })
 
-    const showArtifactInfo = () => {
-        axios.get(`${process.env.REACT_APP_SERVER_URL}/artifact`, artifacts)
-            .then(response => {
+    const showModal = () => {
+        console.log("Click is working....YAYYYYYY😻")
+        <Link 
 
-            })
+           
     }
 
 
@@ -24,7 +24,7 @@ const Pacific = () => {
     return (
         <div>
             <div  className='pacificDiv'>
-            <img className='fishingHook pacificArtifact modalButtonEvent' src='/fishing-hook-pacific.png' alt='fishing hook' onClick={() => showArtifactInfo()} />
+            <img className='fishingHook pacificArtifact modalButtonEvent' src='/fishing-hook-pacific.png' alt='fishing hook' onClick={() => showModal()} />
             <img className='fishingBox pacificArtifact' src='/fishing-box-pacific.png' alt='fishing box' />
             <img className='danceDress pacificArtifact' src='/dance-dress-pacific.png' alt='dance dress' />
             <img className='fan pacificArtifact' src='/fan-pacific.png' alt='fan' />
