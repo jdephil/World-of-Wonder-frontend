@@ -260,3 +260,35 @@
         left: 2vw;
       }
   }
+
+  @media screen and (max-width: 296px) {
+      
+    .cosmetics {
+        top: 54vw;
+        left: 76vw;
+    }
+    
+    .funeralBeads {
+        top: 55vw;
+      }
+
+      .mummifiedBirds {
+        top: 59vw;
+      }
+
+      .mummies {
+        top: 52vw;
+      }
+
+      .slippers {
+        top: 62vw;
+      }
+
+      .wallHanging {
+        left: 35vw;
+      }
+
+      .writings {
+        top: 59vw;
+      }
+  }
