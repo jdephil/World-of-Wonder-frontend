@@ -7,10 +7,11 @@
 }
 
 .officeImg {
-  position: relative;
-  width: 100%;;
-  z-index: -1;
   justify-content: center;
+  position: relative;
+  z-index: -1;
+  margin: 0 auto;
+  width: 100%;
 }
 
 @media screen and (min-width: 1201px) {
@@ -18,18 +19,18 @@
     border: solid 3px green;
     padding-bottom: 190px;
     padding-left: 120px;
-    top: 100px;
+    top: 250px;
     left: 100px;
-    position: absolute;
+    position: relative;
   }
 
-  .egyptPortalLink {
+  /* .egyptPortalLink {
     border: solid 3px blue;
     padding-bottom: 100px;
     padding-right: 195px;
     top: 275px;
     left: 1000px;
-    position: ;
+    position: relative;
   }
 
   .pacificPortalLink {
@@ -39,7 +40,7 @@
     top: 425px;
     left: 525px;
     position: relative;
-  }
+  } */
 }
 
 @media screen and (max-width: 1200px) {
