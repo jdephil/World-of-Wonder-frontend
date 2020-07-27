@@ -1,3 +1,10 @@
+
+.egyptPortalLink {
+  border: solid 3px white;
+  height: 100px;
+  width: 150px;
+  position: absolute;
+
 body {
   
 }
@@ -11,6 +18,7 @@ body {
   position: relative;
   width: 100%;;
   z-index: -1;
+
 }
 
 @media screen and (min-width: 1201px) {
@@ -41,34 +49,4 @@ body {
     position: absolute;
   }
 }
-
-@media screen and (max-width: 1200px) {
-  .nativePortalLink {
-    border: solid 3px yellow;
-    padding-bottom: 15vw;
-    padding-left: 10vw;
-    top: 12vw;
-    left: 25vw;
-    position: absolute;
-  }
-
-  .egyptPortalLink {
-    border: solid 3px blue;
-    padding-bottom: 15vw;
-    padding-right: 18vw;
-    top: 25vw;
-    left: 80vw;
-    position: absolute;
-  }
-
-  .pacificPortalLink {
-    border: solid 3px red;
-    padding-bottom: 20vw;
-    padding-left: 10vw;
-    top: 35vw;
-    left: 26vw;
-    position: absolute;
-  }
-}
-
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './components/Footer.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Office from './components/Office'
 import Navbar from './components/Navbar'
@@ -16,12 +17,13 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/office" exact component={Office} />
-          <Route path="/about" exact component={About} />
+          <Route path="/" exact component={About} />
           <Route path="/profile" exact component={Profile} />
           <Route path='/pacific' component={Pacific} />
           <Route path='/nativeAmerican' component={NativeAmerican} />
         </Switch>
       </BrowserRouter>
+
       <Footer />
     </div>
   );
