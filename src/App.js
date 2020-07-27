@@ -18,13 +18,8 @@ function App() {
           <Route path="/office" exact component={Office} />
           <Route path="/about" exact component={About} />
           <Route path="/profile" exact component={Profile} />
-<<<<<<< HEAD
-          <Route path='/ancientEgypt' component={AncientEgypt} />
           <Route path='/pacific' component={Pacific} />
           <Route path='/nativeAmerican' component={NativeAmerican} />
-=======
-          <Route path="/pacific" exact component={Pacific} />
->>>>>>> jens-branch
         </Switch>
       </BrowserRouter>
       <Footer />
