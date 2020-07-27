@@ -1,16 +1,13 @@
 import React from 'react';
+import './Footer.css'
 
 const Footer = () => {
     return (
-        <body>
-            <header></header>
-            <main></main>
-            <footer class="page-footer">
-                <div class="container">
-                    FOOTER
-            </div>
-            </footer>
-        </body>
+        <footer class="page-footer">
+            <div class="container">
+                FOOTER
+                </div>
+        </footer>
 
     );
 };
