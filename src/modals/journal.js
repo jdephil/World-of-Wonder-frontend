@@ -20,30 +20,33 @@ class Journal extends Component {
                     <img className="journal" src="https://img.icons8.com/plasticine/100/000000/journal.png" alt="Journal" />
                 </a>
 
-                <div id="modal1" class="container modal center-align">
-                    <div class="black-text">
-                        <h1>Journal Entry</h1>
-                    </div>
 
+            <div id="modal1" className="modal">
+                <h5 class="container modal-close right-align black-text" id="close">&#10005;</h5>
+                <div class="container modal-content center">
+
+                <form action="/journal" method="POST">
+
+                    <h1 className = "black-text">Journal Entry</h1>
                     <hr></hr>
 
-                    <form action="/journal" method="POST" className="container">
-                        <div class="input-field black-text">
-                            <h1>Title</h1>
-                            <input type="text" name="title" />
-                        </div>
-                        <div class="input-field black-text">
-                            <h1>Title</h1>
-                            <input type="text" name="title" />
-                        </div>
-                    </form>
-
-                    <div class="modal-footer center-align">
-                        <a href="#!" class="modal-close btn-flat">Submit</a>
+                    <div class="input-field">
+                        <i class="material-icons prefix">title</i>
+                        <input type="text" name="journalTitle" id="journalTitle" />
+                        <label for="journalTitle">Title</label>
                     </div>
 
-                </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">create</i>
+                        <input type="text" name="journalContent" id="journalContent" />
+                        <label for="journalContent">Content</label>
+                    </div>
+
+                    <input type="submit" value="Submit" class="black white-text btn" />
+                </form>
             </div>
+        </div>
+        </div>
         );
     }
 }
