@@ -11,7 +11,7 @@ const AncientEgypt = () => {
     const [artifacts, setArtifacts] = useState({
         name: "",
         description: "",
-        imageURL: ""
+        imageurl: ""
     })
 
     const handleShow = (e) => {
@@ -22,8 +22,14 @@ const AncientEgypt = () => {
                 let articleTitle = response.data['dc:title'][0].value
                 let articleDescription = response.data['dc:description'][0].value
                 let articleImage = response.data['ecrm:P138_has_representation'][0].value
-                setArtifacts({ name: articleTitle, description: articleDescription, imageURL: articleImage })
+                setArtifacts({ name: articleTitle, description: articleDescription, imageurl: articleImage })
             })
+    }
+
+    const saveToProfile = (e) => {
+        e.preventDefault()
+        axios.post(`${process.env.REACT_APP_SERVER_URL}/profile/artifact/`, artifacts)
+
     }
 
 
@@ -36,7 +42,13 @@ const AncientEgypt = () => {
                     <Modal.Body>
                         <h3>{artifacts.name}</h3>
                         <p>{artifacts.description}</p>
-                        <img src={artifacts.imageURL} />
+                        <img className="modalImage" src={artifacts.imageurl} />
+                        <form>
+                            <input type="hidden" name="name" value={artifacts.name}></input>
+                            <input type="hidden" name="description" value={artifacts.description}></input>
+                            <input type="hidden" name="imageurl" value={artifacts.imageurl}></input>
+                            <button type="submit" variant="outline-info" onClick={saveToProfile}>Save to Archive</button>
+                        </form>
                     </Modal.Body>
                 </Modal>
             </div>
@@ -53,29 +65,29 @@ const AncientEgypt = () => {
             </div>
 
             <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact wallHanging hoverable" src="egypt/wall-hanging-egypt.png" alt="wall hanging" />
+                <img className="egyptArtifact wallHanging hoverable" id='626417' src="egypt/wall-hanging-egypt.png" alt="wall hanging" />
             </a>
 
             <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact mummies hoverable" src="egypt/mummy2-egypt.png" alt="mummy" />
+                <img className="egyptArtifact mummies hoverable" id='30452' src="egypt/mummy2-egypt.png" alt="mummy" />
             </a>
             <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact slippers hoverable" src="egypt/slippers-egypt.png" alt="slippers" />
+                <img className="egyptArtifact slippers hoverable" id='523725' src="egypt/slippers-egypt.png" alt="slippers" />
             </a>
             <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact cosmetics hoverable" src="egypt/cosmetics-egypt.png" alt="cosmetics" />
-            </a>
-
-            <a class="modal-trigger" href="#test">
-                <img className='egyptArtifact writings hoverable' src="egypt/writings-egypt.png" alt="writings" />
+                <img className="egyptArtifact cosmetics hoverable" id='103226' src="egypt/cosmetics-egypt.png" alt="cosmetics" />
             </a>
 
             <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact mummifiedBirds hoverable" src="egypt/mummified-birds-egypt.png" alt="mummified birds" />
+                <img className='egyptArtifact writings hoverable' id='502345' src="egypt/writings-egypt.png" alt="writings" />
             </a>
 
             <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact funeralBeads hoverable" src="egypt/funeral-beads-egypt.png" alt="funeral beads" />
+                <img className="egyptArtifact mummifiedBirds hoverable" id='33177' src="egypt/mummified-birds-egypt.png" alt="mummified birds" />
+            </a>
+
+            <a class="modal-trigger" href="#test">
+                <img className="egyptArtifact funeralBeads hoverable" id='523731' src="egypt/funeral-beads-egypt.png" alt="funeral beads" />
             </a>
 
             <a class="modal-trigger" href="#test">
