@@ -66,22 +66,23 @@ function App() {
     <div>
       <BrowserRouter>
         <Navbar handleLogout={handleLogout} isAuthenticateded={isAuthenticated} />
-        <Switch>
-          <Route path='/pacific' component={Pacific} />
-          <Route path='/nativeAmerican' component={NativeAmerican} />
-          <Route path='/ancientEgypt' exact component={AncientEgypt} />
-          <Route path="/office" exact component={Office} />
-          <Route path="/" exact component={About} />
-          <Route path="/profile" exact component={Profile} />
-          <Route path='/ancientEgypt' component={AncientEgypt} />
-          <Route path='/pacific' component={Pacific} />
-          <Route path='/nativeAmerican' component={NativeAmerican} />
-          <Route path='/teampage' component={TeamPage} />
-        </Switch>
+          <div className="react-router-logic">
+            <Switch>
+              <Route path='/signup' component={ Signup } />
+              <Route path='/login' render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />
+              <Route path='/pacific' component={Pacific} />
+              <Route path='/nativeAmerican' component={NativeAmerican} />
+              <Route path='/ancientEgypt' exact component={AncientEgypt} />
+              <Route path="/office" exact component={Office} />
+              <Route path="/" exact component={About} />
+              <PrivateRoute path="/profile" exact component={Profile} />
+              <Route path='/ancientEgypt' component={AncientEgypt} user={currentUser} />
+              <Route path='/pacific' component={Pacific} />
+              <Route path='/nativeAmerican' component={NativeAmerican} />
+            </Switch>
+        </div>
         <Footer />
       </BrowserRouter>
-
-
     </div>
   );
 }
