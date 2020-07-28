@@ -40,14 +40,48 @@ const AncientEgypt = () => {
                     </Modal.Body>
                 </Modal>
             </div>
-            <img className="egyptArtifact wallHanging hoverable" src="egypt/wall-hanging-egypt.png" alt="wall hanging" onClick={handleShow} />
-            <img className="egyptArtifact mummies hoverable" src="egypt/mummy2-egypt.png" alt="mummy" onClick={handleShow} />
-            <img className="egyptArtifact slippers hoverable" src="egypt/slippers-egypt.png" alt="slippers" onClick={handleShow} />
-            <img className="egyptArtifact cosmetics hoverable" src="egypt/cosmetics-egypt.png" alt="cosmetics" onClick={handleShow} />
-            <img className='egyptArtifact writings hoverable' src="egypt/writings-egypt.png" alt="writings" onClick={handleShow} />
-            <img className="egyptArtifact mummifiedBirds hoverable" src="egypt/mummified-birds-egypt.png" alt="mummified birds" onClick={handleShow} />
-            <img className="egyptArtifact funeralBeads hoverable" src="egypt/funeral-beads-egypt.png" alt="funeral beads" onClick={handleShow} />
-            <img className="egyptRoomImg hoverable" src="egypt/egypt-room.jpg" alt="ancient egyptian museum room" onClick={handleShow} />
+
+            <div id="test" className="modal">
+                <h5 class="container modal-close right-align black-text" id="close">&#10005;</h5>
+                <div class="container modal-content center">
+
+                    <h3>Name :  {artifacts.name}</h3>
+                    <p>Description :  {artifacts.description}</p>
+                    <img src={artifacts.imageURL} />
+
+                </div>
+            </div>
+
+            <a class="modal-trigger" href="#test">
+                <img className="egyptArtifact wallHanging hoverable" src="egypt/wall-hanging-egypt.png" alt="wall hanging" />
+            </a>
+
+            <a class="modal-trigger" href="#test">
+                <img className="egyptArtifact mummies hoverable" src="egypt/mummy2-egypt.png" alt="mummy" />
+            </a>
+            <a class="modal-trigger" href="#test">
+                <img className="egyptArtifact slippers hoverable" src="egypt/slippers-egypt.png" alt="slippers" />
+            </a>
+            <a class="modal-trigger" href="#test">
+                <img className="egyptArtifact cosmetics hoverable" src="egypt/cosmetics-egypt.png" alt="cosmetics" />
+            </a>
+
+            <a class="modal-trigger" href="#test">
+                <img className='egyptArtifact writings hoverable' src="egypt/writings-egypt.png" alt="writings" />
+            </a>
+
+            <a class="modal-trigger" href="#test">
+                <img className="egyptArtifact mummifiedBirds hoverable" src="egypt/mummified-birds-egypt.png" alt="mummified birds" />
+            </a>
+
+            <a class="modal-trigger" href="#test">
+                <img className="egyptArtifact funeralBeads hoverable" src="egypt/funeral-beads-egypt.png" alt="funeral beads" />
+            </a>
+
+            <a class="modal-trigger" href="#test">
+                <img className="egyptRoomImg hoverable" src="egypt/egypt-room.jpg" alt="ancient egyptian museum room" />
+            </a>
+
         </div>
 
     );
