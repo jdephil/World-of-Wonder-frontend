@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import './components/Footer.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
+import setAuthToken from './utils/setAuthToken';
 import Office from './components/Office'
 import Navbar from './components/Navbar'
 import About from './components/About';
@@ -10,6 +12,9 @@ import Footer from './components/Footer'
 import Pacific from './components/Pacific'
 import NativeAmerican from './components/NativeAmerican'
 import AncientEgypt from './components/AncientEgypt'
+import Signup from './components/Signup';
+import Login from './components/Login';
+
 
 function App() {
   return (
