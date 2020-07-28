@@ -21,6 +21,8 @@ export class Navbar extends Component {
                         {/* <li><NavLink to="/collections">Collections</NavLink></li> */}
                         <li><NavLink to="/profile">Profile</NavLink></li>
                         <li><NavLink to="/office">Office</NavLink></li>
+                        <li><NavLink to="/signup">Sign Up</NavLink></li>
+                        <li><NavLink to="/login">Login</NavLink></li>
                     </ul>
                 </div>
 
