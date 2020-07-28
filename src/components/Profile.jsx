@@ -1,26 +1,11 @@
-import React, { Link } from 'react';
+import React from 'react';
 
-const Profile = (props) => {
-    let userData = props.user
-      ? <div>
-          <h1>Profile</h1>
-            <p><strong>Name:</strong> {props.user.name}</p>
-            <p><strong>email:</strong> {props.user.email}</p>
-            <p><strong>ID:</strong> {props.user.id}</p>
+const Profile = () => {
+    return (
+        <div class = "container">
+            Profile
         </div>
-      : <h4>Loading...</h4>
-
-      let errorDiv = () => {
-        return (
-          <div className="text-center pt-4"><h3>Please <Link to='/login'>login</Link> to view this page</h3></div>
-        )
-        }
-
-      return (
-        <div>
-          {props.user ? userData : errorDiv() }
-        </div>
-      )
+    );
 };
 
 export default Profile;
