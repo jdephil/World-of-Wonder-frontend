@@ -30,7 +30,7 @@ export class Navbar extends Component {
 
                 {/* Burger menu */}
                 <ul class="sidenav" id="mobile-demo">
-                    <li><NavLink to="/collections">Collections</NavLink></li>
+                    <li><NavLink to="/collections" className="dropdown-trigger" data-target="dropdown1">Collections</NavLink></li>
                     <li><NavLink to="/profile">Profile</NavLink></li>
                     <li><NavLink to="/office">Office</NavLink></li>
                 </ul>

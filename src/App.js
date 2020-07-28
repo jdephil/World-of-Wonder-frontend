@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import Pacific from './components/Pacific'
 import NativeAmerican from './components/NativeAmerican'
 import AncientEgypt from './components/AncientEgypt'
+import TeamPage from './components/teamPage'
 
 function App() {
   return (
@@ -26,10 +27,12 @@ function App() {
           <Route path='/ancientEgypt' component={AncientEgypt} />
           <Route path='/pacific' component={Pacific} />
           <Route path='/nativeAmerican' component={NativeAmerican} />
+          <Route path='/teampage' component={TeamPage} />
         </Switch>
+        <Footer />
       </BrowserRouter>
 
-      <Footer />
+
     </div>
   );
 }
