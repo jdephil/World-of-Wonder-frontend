@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Pacific.css';
 import axios from 'axios';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from 'react-bootstrap/Modal';
 
 // import Artifact from '../modals/Artifact'
