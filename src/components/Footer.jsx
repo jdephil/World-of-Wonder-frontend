@@ -8,7 +8,7 @@ const Footer = () => {
         <footer class="page-footer">
             <div class="container">
                 <div className="right">
-                    <Link exact to="/teampage">
+                    <Link exact to="/teampage" className = "link">
                         <div className="white-text">Meet the Team</div>
                     </Link>
                 </div>
