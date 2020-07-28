@@ -23,33 +23,33 @@
   width: 100%;
 }
 
-@media screen and (min-width: 1201px) {
+@media screen and (max-width: 2000px) {
   .nativePortalLink {
     border: solid 3px green;
-    padding-bottom: 190px;
-    padding-left: 120px;
-    top: 250px;
-    left: 100px;
-    position: relative;
+    padding-bottom: 15vw;
+    padding-left: 15vw;
+    top: 8vw;
+    left: 25vw;
+    position: absolute;
   }
 
-  /* .egyptPortalLink {
+  .egyptPortalLink {
     border: solid 3px blue;
-    padding-bottom: 100px;
-    padding-right: 195px;
-    top: 275px;
-    left: 1000px;
-    position: relative;
+    padding-bottom: 15vw;
+    padding-right: 18vw;
+    top: 20vw;
+    left: 75vw;
+    position: absolute;
   }
 
   .pacificPortalLink {
     border: solid 3px red;
-    height: 250px;
-    width: 125px;
-    top: 425px;
-    left: 525px;
-    position: relative;
-  } */
+    padding-bottom: 20vw;
+    padding-left: 10vw;
+    top: 30vw;
+    left: 30vw;
+    position: absolute;
+  }
 }
 
 @media screen and (max-width: 1200px) {
