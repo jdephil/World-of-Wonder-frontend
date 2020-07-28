@@ -1,12 +1,18 @@
 import React from 'react';
+import { NavLink, Link } from 'react-router-dom'
 import './Footer.css'
+import './teamPage.jsx'
 
 const Footer = () => {
     return (
         <footer class="page-footer">
             <div class="container">
-                FOOTER
+                <div className="right">
+                    <Link exact to="/teampage">
+                        <div className="white-text">Meet the Team</div>
+                    </Link>
                 </div>
+            </div>
         </footer>
 
     );
