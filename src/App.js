@@ -14,13 +14,58 @@ import NativeAmerican from './components/NativeAmerican'
 import AncientEgypt from './components/AncientEgypt'
 import Signup from './components/Signup';
 import Login from './components/Login';
+import TeamPage from './components/teamPage'
 
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  //get user via jwt token to confirm user authenticated
+  const user = localStorage.getItem(`jwtToken`);
+  //setup return based on user status
+  return <Route {...rest} render={(props) => (
+      user
+          ? <Component {...rest} {...props} />
+          : <Redirect to='/login' />
+      )} 
+  />
+}
 
 function App() {
+  // set state values
+  let [currentUser, setCurrentUser] = useState("")
+  let [isAuthenticated, setIsAuthenticated] = useState(true)
+
+  useEffect(() => {
+    let token;
+    if(localStorage.getItem('jwtToken') === null) {
+      setIsAuthenticated(false)
+    } else {
+      token = jwt_decode(localStorage.getItem('jwtToken'));
+      setAuthToken(localStorage.jwtToken);
+      setCurrentUser(token);
+      setIsAuthenticated(true);
+    }
+  }, [])
+
+  let nowCurrentUser = (userData) => {
+    console.log("oh hey this is even running")
+    setCurrentUser(userData);
+    setIsAuthenticated(true)
+  }
+
+  let handleLogout = () => {
+    if(localStorage.getItem('jwtToken') !== null) {
+      localStorage.removeItem('jwtToken');
+      setCurrentUser(null);
+      setIsAuthenticated(false);
+    }
+  }
+
+  console.log('Current User = ', currentUser);
+  console.log('Authenticated = ', isAuthenticated);
+
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
+        <Navbar handleLogout={handleLogout} isAuthenticateded={isAuthenticated} />
         <Switch>
           <Route path='/pacific' component={Pacific} />
           <Route path='/nativeAmerican' component={NativeAmerican} />
@@ -28,10 +73,15 @@ function App() {
           <Route path="/office" exact component={Office} />
           <Route path="/" exact component={About} />
           <Route path="/profile" exact component={Profile} />
+          <Route path='/ancientEgypt' component={AncientEgypt} />
+          <Route path='/pacific' component={Pacific} />
+          <Route path='/nativeAmerican' component={NativeAmerican} />
+          <Route path='/teampage' component={TeamPage} />
         </Switch>
+        <Footer />
       </BrowserRouter>
 
-      <Footer />
+
     </div>
   );
 }
