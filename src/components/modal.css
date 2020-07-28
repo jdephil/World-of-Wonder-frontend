@@ -1,0 +1,42 @@
+.modalContent {
+  background-color: #fefefe;
+  margin: 15px auto 0;
+  padding: 20px;
+  border: 3px solid #ee6e73;
+  text-align: center;
+  width: 800px;
+}
+
+.modalImage {
+  width: 300px;
+  height: 300px;
+  text-align: center
+}
+
+.closeModal {
+  color: #ee6e73;
+  background-color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #ee6e73;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalButton {
+  background-color: white;
+  color: #ee6e73;
+  font-family: 'Quicksand', sans-serif;
+  padding: 4px 8px;
+  margin-top: 5px;
+  font-size: 16px;
+  display: flex;
+}
+
+.closeButton {
+  text-align: right;
+}

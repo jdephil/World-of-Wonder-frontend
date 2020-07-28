@@ -25,7 +25,7 @@ export class About extends Component {
                 <div className="section white center-align container about">
                     <h2>What is World of Wonder?</h2>
                     <h5 className = "aboutText">World of Wonder is an interactive, online application dedicated to bringing a musuem to you. There are varieties of collections to view and artifacts to learn about!</h5>
-                    <NavLink to = "/office" class = "waves-effect waves-light black btn"><i class = "material-icons right">chevron_right</i> Enter the office</NavLink>
+                    <NavLink to = "/office" class = "waves-effect waves-light white-text black btn"><i class = "material-icons right">chevron_right</i> Enter the office</NavLink>
                 </div>
 
                 <div className="parallax-container">
