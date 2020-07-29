@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import Journal from '../modals/journal.js'
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 11b7a43c44e7d8188d9b5c35195d17a08a9f2d5b
 export class Navbar extends Component {
     componentDidMount() {
         document.addEventListener('DOMContentLoaded', function () {
