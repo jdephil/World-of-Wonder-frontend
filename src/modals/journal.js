@@ -1,26 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import M from 'materialize-css/dist/js/materialize.min.js'
 import '../modals/journal.css'
 
-class Journal extends Component {
 
-    componentDidMount() {
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.modal');
-            var instances = M.Modal.init(elems, {});
-        });
-    }
+const Journal = (props) => {
 
+    useEffect(() => {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems, {});
+      }, []);
 
-    render() {
         return (
             <div>
                 <a class="modal-trigger" href="#modal1">
                     <img className="journal" src="https://img.icons8.com/plasticine/100/000000/journal.png" alt="Journal" />
                 </a>
                 {
-                    this.props.isAuthenticated ?
+                    props.isAuthenticated ?
                     <div id="modal1" className="modal">
                         <h5 class="container modal-close right-align black-text" id="close">&#10005;</h5>
                         <div class="container modal-content center">
@@ -52,6 +49,5 @@ class Journal extends Component {
             </div>
         );
     }
-}
 
 export default Journal;
