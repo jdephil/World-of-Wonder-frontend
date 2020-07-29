@@ -74,10 +74,7 @@ function App() {
               <Route path='/ancientEgypt' exact component={AncientEgypt} />
               <Route path="/office" exact component={Office} />
               <Route path="/" exact component={About} />
-              <PrivateRoute path="/profile" exact component={Profile} />
-              <Route path='/ancientEgypt' component={AncientEgypt} user={currentUser} />
-              <Route path='/pacific' component={Pacific} />
-              <Route path='/nativeAmerican' component={NativeAmerican} />
+              <PrivateRoute path="/profile" exact component={Profile} user={currentUser} />
             </Switch>
         </div>
         <Footer />
