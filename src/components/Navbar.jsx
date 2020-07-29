@@ -19,18 +19,38 @@ export class Navbar extends Component {
                     <Link className="brand-logo link" exact to="/"><div>World of Wonder</div></Link>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><NavLink to="/collections" className="dropdown-trigger link" data-target="dropdown1">Collections</NavLink></li>
-                        <li><NavLink to="/profile">Profile</NavLink></li>
                         <li><NavLink to="/office">Office</NavLink></li>
-                        <li><NavLink to="/signup">Sign Up</NavLink></li>
-                        <li><NavLink to="/login">Login</NavLink></li>
+                        <li><NavLink to="/collections" className="dropdown-trigger link" data-target="dropdown1">Collections</NavLink></li>
+                        {
+                            this.props.isAuthenticated ?
+                                <>
+                                    <li><NavLink to="/profile">Profile</NavLink></li>
+                                    <li><NavLink to="/" onClick={this.props.handleLogout}>Logout</NavLink></li>
+                                </>
+                            :
+                                <>
+                                    <li><NavLink to="/signup">Sign Up</NavLink></li>
+                                    <li><NavLink to="/login">Login</NavLink></li>
+                                </>
+                        }
                     </ul>
                 </div>
                 {/* Burger menu */}
                 <ul class="sidenav" id="mobile-demo">
                     <li><NavLink to="/collections" className="dropdown-trigger link" data-target="dropdown2">Collections</NavLink></li>
-                    <li><NavLink to="/profile" className="link">Profile</NavLink></li>
                     <li><NavLink to="/office" className="link">Office</NavLink></li>
+                    {
+                        this.props.isAuthenticated ?
+                            <>
+                                <li><NavLink to="/profile" className="link">Profile</NavLink></li>
+                                <li><NavLink to="/" className="link" onClick={this.props.handleLogout}>Logout</NavLink></li>
+                            </>
+                        :
+                            <>
+                                <li><NavLink to="/signup" className="link">Sign Up</NavLink></li>
+                                <li><NavLink to="/login" className="link">Login</NavLink></li>
+                            </>
+                    }
                 </ul>
                 <ul id='dropdown1' class='dropdown-content'>
                     <li><NavLink to="/ancientEgypt" className="link">Ancient Egypt</NavLink></li>
@@ -42,7 +62,7 @@ export class Navbar extends Component {
                     <li><NavLink to="/pacific" className="link">Pacific</NavLink></li>
                     <li><NavLink to="/NativeAmerican" className="link">Native American</NavLink></li>
                 </ul>
-                <Journal />
+                <Journal isAuthenticated={this.props.isAuthenticated} />
             </nav >
         );
     };

@@ -8,14 +8,15 @@ import './modal.css'
 
 // import Artifact from '../modals/Artifact'
 
-const Pacific = () => {
+const Pacific = (props) => {
    const [show, setShow] = useState(false);
-   const handleClose = () => setShow(false);
    const [artifacts, setArtifacts] = useState({
     name: "",
     description: "", 
     imageurl: ""
   })
+
+  const handleClose = () => setShow(false);
   
   const handleShow = (e) => {
     console.log(e.target.id)
@@ -32,13 +33,13 @@ const Pacific = () => {
     const saveToProfile = (e) => {
         e.preventDefault()
         axios.post(`${process.env.REACT_APP_SERVER_URL}/profile/artifact/`, artifacts)
-            
+        handleClose()    
     }
     
 
     return (
         <div>
-             <div className="modalWindow">
+            <div className="modalWindow">
                 <Modal show={show} className='modalContent'>
                     <Modal.Body>
 
@@ -52,8 +53,6 @@ const Pacific = () => {
                             <input type="hidden" name="name" value={artifacts.name}></input>
                             <input type="hidden" name="description" value={artifacts.description}></input>
                             <input type="hidden" name="imageurl" value={artifacts.imageurl}></input>
-
-
                             <button type="submit" className="modalButton" onClick={saveToProfile}>Save to Profile</button>
 
                         </form>
@@ -62,16 +61,14 @@ const Pacific = () => {
             </div>
             <div  className='pacificDiv'>
             <img className='fishingHook pacificArtifact' id='660574' src='/fishing-hook-pacific.png' alt='fishing hook' onClick={handleShow}/>
-            <img className='fishingBox pacificArtifact' id='51923' src='/fishing-box-pacific.png' alt='fishing box' onClick={handleShow}/>
+            <img className='fishingBox pacificArtifact' id='635437' src='/fishing-box-pacific.png' alt='fishing box' onClick={handleShow}/>
             <img className='danceDress pacificArtifact' id='42200' src='/dance-dress-pacific.png' alt='dance dress' onClick={handleShow}/>
             <img className='fan pacificArtifact' id='42147' src='/fan-pacific.png' alt='fan' onClick={handleShow}/>
             <img className='kite pacificArtifact' id='91655' src='/kite-pacific.png' alt='kite' onClick={handleShow}/>
-            <img className='canoe pacificArtifact' id='86145' src='/model-canoe-pacific.png' alt='model canoe' onClick={handleShow}/>
+            <img className='canoe pacificArtifact' id='627946' src='/model-canoe-pacific.png' alt='model canoe' onClick={handleShow}/>
             <img className='wovenMat pacificArtifact' id='67902' src='/woven-mat-pacific.png' alt='woven mat' onClick={handleShow}/>
             <img className='waistGarment pacificArtifact' id='52072' src='/waist-garment-pacific.png' alt='waist garment' onClick={handleShow} />
-
-            <img className='pacificRoomImg' src='/pacific-room.png' alt='maori and pacific museum room' onClick={handleShow} />
-
+            <img className='pacificRoomImg' src='/pacific-room.png' alt='maori and pacific museum room' />
             </div>
         </div>
     );
