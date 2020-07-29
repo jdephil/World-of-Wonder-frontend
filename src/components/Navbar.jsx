@@ -61,7 +61,7 @@ export class Navbar extends Component {
                     <li><NavLink to="/pacific" className="link">Pacific</NavLink></li>
                     <li><NavLink to="/NativeAmerican" className="link">Native American</NavLink></li>
                 </ul>
-                <Journal />
+                <Journal isAuthenticated={this.props.isAuthenticated} />
             </nav >
         );
     };
