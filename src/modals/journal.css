@@ -1,0 +1,7 @@
+#modal1{
+    border:5px solid red;
+}
+
+.modal-content {
+    transform: translateY(50%);
+}
