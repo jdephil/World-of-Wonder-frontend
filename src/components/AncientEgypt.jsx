@@ -31,16 +31,18 @@ const AncientEgypt = (props) => {
     const saveToProfile = (e) => {
         e.preventDefault()
         axios.post(`${process.env.REACT_APP_SERVER_URL}/profile/artifact/`, artifacts)
-
+        handleClose()
     }
 
     return (
         <div class="egyptDiv">
-            <div className='Modal'>
-                <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                    </Modal.Header>
+             <div className="modalWindow">
+                <Modal show={show} className='modalContent'>
                     <Modal.Body>
+
+                        <div class="closeButton">
+                            <button class="closeModal" onClick={handleClose} >&times;</button>
+                        </div>
                         <h3>{artifacts.name}</h3>
                         <p>{artifacts.description}</p>
                         <img className="modalImage" src={artifacts.imageurl} />
@@ -48,12 +50,12 @@ const AncientEgypt = (props) => {
                             <input type="hidden" name="name" value={artifacts.name}></input>
                             <input type="hidden" name="description" value={artifacts.description}></input>
                             <input type="hidden" name="imageurl" value={artifacts.imageurl}></input>
-                            <button type="submit" variant="outline-info" onClick={saveToProfile}>Save to Archive</button>
+                            <button type="submit" className="modalButton" onClick={saveToProfile}>Save to Profile</button>
+
                         </form>
                     </Modal.Body>
                 </Modal>
             </div>
-
             <div id="test" className="modal">
                 <h5 class="container modal-close right-align black-text" id="close">&#10005;</h5>
                 <div class="container modal-content center">
@@ -65,59 +67,14 @@ const AncientEgypt = (props) => {
 
                 </div>
             </div>
-
-
-            <a class="modal-trigger" href="#test" onClick={handleShow}>
-
-                <img className="egyptArtifact wallHanging hoverable" id='626417' src="egypt/wall-hanging-egypt.png" alt="wall hanging" />
-            </a>
-
-            <a class="modal-trigger" href="#test">
-
-                <img className="egyptArtifact mummies hoverable" id='30452' src="egypt/mummy2-egypt.png" alt="mummy" />
-            </a>
-            <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact slippers hoverable" id='523725' src="egypt/slippers-egypt.png" alt="slippers" />
-            </a>
-            <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact cosmetics hoverable" id='103226' src="egypt/cosmetics-egypt.png" alt="cosmetics" />
-            </a>
-
-            <a class="modal-trigger" href="#test">
-                <img className='egyptArtifact writings hoverable' id='502345' src="egypt/writings-egypt.png" alt="writings" />
-            </a>
-
-            <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact mummifiedBirds hoverable" id='33177' src="egypt/mummified-birds-egypt.png" alt="mummified birds" />
-            </a>
-
-            <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact funeralBeads hoverable" id='523731' src="egypt/funeral-beads-egypt.png" alt="funeral beads" />
-                <img className="egyptArtifact mummies hoverable" id='30452' src="egypt/mummy2-egypt.png" alt="mummy" onClick={handleShow} />
-            </a>
-            <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact slippers hoverable" id='523725' src="egypt/slippers-egypt.png" alt="slippers" onClick={handleShow} />
-            </a>
-            <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact cosmetics hoverable" id='103226' src="egypt/cosmetics-egypt.png" alt="cosmetics" onClick={handleShow} />
-            </a>
-
-            <a class="modal-trigger" href="#test">
-                <img className='egyptArtifact writings hoverable' id='502345' src="egypt/writings-egypt.png" alt="writings" onClick={handleShow}/>
-            </a>
-
-            <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact mummifiedBirds hoverable" id='33177' src="egypt/mummified-birds-egypt.png" alt="mummified birds" onClick={handleShow} />
-            </a>
-
-            <a class="modal-trigger" href="#test">
-                <img className="egyptArtifact funeralBeads hoverable" id='523731' src="egypt/funeral-beads-egypt.png" alt="funeral beads" onClick={handleShow}/>
-            </a>
-
-            <a class="modal-trigger" href="#test">
-                <img className="egyptRoomImg hoverable" src="egypt/egypt-room.jpg" alt="ancient egyptian museum room" />
-            </a>
-
+            <img className="egyptArtifact wallHanging hoverable" id='626407' src="egypt/wall-hanging-egypt.png" alt="wall hanging" onClick={handleShow} />
+            <img className="egyptArtifact mummies hoverable" id='30452' src="egypt/mummy2-egypt.png" alt="mummy" onClick={handleShow} />
+            <img className="egyptArtifact slippers hoverable" id='523725' src="egypt/slippers-egypt.png" alt="slippers" onClick={handleShow}/>
+            <img className="egyptArtifact cosmetics hoverable" id='103226' src="egypt/cosmetics-egypt.png" alt="cosmetics" onClick={handleShow} />
+            <img className='egyptArtifact writings hoverable' id='597565' src="egypt/writings-egypt.png" alt="writings" onClick={handleShow}/>
+            <img className="egyptArtifact mummifiedBirds hoverable" id='33177' src="egypt/mummified-birds-egypt.png" alt="mummified birds" onClick={handleShow} />
+            <img className="egyptArtifact funeralBeads hoverable" id='523731' src="egypt/funeral-beads-egypt.png" alt="funeral beads" onClick={handleShow}/>
+            <img className="egyptRoomImg hoverable" src="egypt/egypt-room.jpg" alt="ancient egyptian museum room" />
         </div>
 
     );
