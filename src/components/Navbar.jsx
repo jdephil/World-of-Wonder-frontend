@@ -27,6 +27,9 @@ export class Navbar extends Component {
                         <li><NavLink to="/office">Office</NavLink></li>
                         <li><NavLink to="/signup">Sign Up</NavLink></li>
                         <li><NavLink to="/login">Login</NavLink></li>
+                        <li><NavLink to="/collections" className="dropdown-trigger link" data-target="dropdown1">Collections</NavLink></li>
+                        <li><NavLink to="/profile" className = "link">Profile</NavLink></li>
+                        <li><NavLink to="/office" className = "link">Office</NavLink></li>
                     </ul>
                 </div>
 
