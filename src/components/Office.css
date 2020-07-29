@@ -1,5 +1,4 @@
 .egyptPortalLink {
-  border: solid 3px white;
   height: 100px;
   width: 150px;
   position: absolute;
@@ -25,7 +24,6 @@
 
 @media screen and (max-width: 2000px) {
   .nativePortalLink {
-    border: solid 3px green;
     padding-bottom: 15vw;
     padding-left: 15vw;
     top: 8vw;
@@ -34,7 +32,6 @@
   }
 
   .egyptPortalLink {
-    border: solid 3px blue;
     padding-bottom: 15vw;
     padding-right: 18vw;
     top: 20vw;
@@ -43,13 +40,34 @@
   }
 
   .pacificPortalLink {
-    border: solid 3px red;
     padding-bottom: 20vw;
     padding-left: 10vw;
     top: 30vw;
     left: 30vw;
     position: absolute;
   }
+
+  .nickImg {
+    position: absolute;
+    width: 20vw;
+    left: 50vw;
+    bottom: 0vw;
+  }
+
+  .thought {
+    position: absolute;
+    display: inline;
+    left: 40vw;
+    bottom: 30vw;
+    background-color:#fff;
+    padding:5px;
+    border-radius:30px;
+    min-width:40px;
+    max-width:500px;
+    text-align:center;
+    opacity: 0.9;
+  }
+  
 }
 
 @media screen and (max-width: 1200px) {

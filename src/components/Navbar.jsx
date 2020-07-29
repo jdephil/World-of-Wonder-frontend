@@ -19,7 +19,7 @@ export class Navbar extends Component {
                     <Link className="brand-logo link" exact to="/"><div>World of Wonder</div></Link>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><NavLink to="/office">Office</NavLink></li>
+                        <li><NavLink to="/">Office</NavLink></li>
                         <li><NavLink to="/collections" className="dropdown-trigger link" data-target="dropdown1">Collections</NavLink></li>
                         {
                             this.props.isAuthenticated ?
