@@ -11,6 +11,7 @@ const Signup = () => {
 
   let handleName = (e) => {
     setName(e.target.value)
+    console.log('AHHHHH')
   }
 
   let handleEmail = (e) => {
