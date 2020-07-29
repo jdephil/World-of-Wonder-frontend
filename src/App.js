@@ -28,16 +28,15 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
       )} 
   />
 }
-
 function App() {
   // set state values
   let [currentUser, setCurrentUser] = useState("")
   let [isAuthenticated, setIsAuthenticated] = useState(true)
-
   useEffect(() => {
     let token;
     if(localStorage.getItem('jwtToken') === null) {
       setIsAuthenticated(false)
+      console.log('AHHHHH')
     } else {
       token = jwt_decode(localStorage.getItem('jwtToken'));
       setAuthToken(localStorage.jwtToken);
@@ -45,13 +44,11 @@ function App() {
       setIsAuthenticated(true);
     }
   }, [])
-
   let nowCurrentUser = (userData) => {
     console.log("oh hey this is even running")
     setCurrentUser(userData);
     setIsAuthenticated(true)
   }
-
   let handleLogout = () => {
     if(localStorage.getItem('jwtToken') !== null) {
       localStorage.removeItem('jwtToken');
@@ -59,36 +56,35 @@ function App() {
       setIsAuthenticated(false);
     }
   }
-
   console.log('Current User = ', currentUser);
   console.log('Authenticated = ', isAuthenticated);
 
-  const [show, setShow] = useState(false);
-  const [artifacts, setArtifacts] = useState({
-   name: "",
-   description: "", 
-   imageurl: ""
- })
+//   const [show, setShow] = useState(false);
+//   const [artifacts, setArtifacts] = useState({
+//    name: "",
+//    description: "", 
+//    imageurl: ""
+//  })
  
-  const handleShow = (e) => {
-    console.log(e.target.id)
-    setShow(true);
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/artifact/${e.target.id}`, artifacts)
-        .then(response => {
-            let articleTitle = response.data['dc:title'][0].value
-            let articleDescription = response.data['dc:description'][0].value
-            let articleImage = response.data['ecrm:P138_has_representation'][0].value
-            setArtifacts({ name: articleTitle, description: articleDescription, imageurl: articleImage })
-        })
-    }
+//   const handleShow = (e) => {
+//     console.log(e.target.id)
+//     setShow(true);
+//     axios.get(`${process.env.REACT_APP_SERVER_URL}/artifact/${e.target.id}`, artifacts)
+//         .then(response => {
+//             let articleTitle = response.data['dc:title'][0].value
+//             let articleDescription = response.data['dc:description'][0].value
+//             let articleImage = response.data['ecrm:P138_has_representation'][0].value
+//             setArtifacts({ name: articleTitle, description: articleDescription, imageurl: articleImage })
+//         })
+//     }
 
-    const handleClose = () => setShow(false);
+//     const handleClose = () => setShow(false);
 
-    const saveToProfile = (e) => {
-        e.preventDefault()
-        axios.post(`${process.env.REACT_APP_SERVER_URL}/profile/artifact/`, artifacts)
+//     const saveToProfile = (e) => {
+//         e.preventDefault()
+//         axios.post(`${process.env.REACT_APP_SERVER_URL}/profile/artifact/`, artifacts)
             
-    }
+//     }
 
   return (
     <div>
@@ -98,13 +94,12 @@ function App() {
             <Switch>
               <Route path='/signup' component={ Signup } />
               <Route path='/login' render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />
-              <Route path='/pacific' component={Pacific} saveToProfile={saveToProfile} handleShow={handleShow} handleClose={handleClose} />
-              <Route path='/nativeAmerican' component={NativeAmerican} saveToProfile={saveToProfile} handleShow={handleShow} handleClose={handleClose}/>
-              <Route path='/ancientEgypt' exact component={AncientEgypt} saveToProfile={saveToProfile} handleShow={handleShow} handleClose={handleClose}/>
+              <Route path='/pacific' component={Pacific} />
+              <Route path='/nativeAmerican' component={NativeAmerican} />
+              <Route path='/ancientEgypt' exact component={AncientEgypt}  />
               <Route path="/office" exact component={Office} />
               <Route path="/" exact component={About} />
-              <PrivateRoute path="/profile" exact component={Profile} />
-              <Route path='/teampage' component={TeamPage} />
+              <PrivateRoute path="/profile" exact component={Profile} user={currentUser} />
             </Switch>
         </div>
         <Footer />
@@ -112,5 +107,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

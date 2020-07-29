@@ -16,34 +16,35 @@ const Pacific = (props) => {
     imageurl: ""
   })
 
-//   const handleClose = () => setShow(false);
+  const handleClose = () => setShow(false);
   
-//   const handleShow = (e) => {
-//     console.log(e.target.id)
-//     setShow(true);
-//     axios.get(`${process.env.REACT_APP_SERVER_URL}/artifact/${e.target.id}`, artifacts)
-//         .then(response => {
-//             let articleTitle = response.data['dc:title'][0].value
-//             let articleDescription = response.data['dc:description'][0].value
-//             let articleImage = response.data['ecrm:P138_has_representation'][0].value
-//             setArtifacts({ name: articleTitle, description: articleDescription, imageurl: articleImage })
-//         })
-//     }
+  const handleShow = (e) => {
+    console.log(e.target.id)
+    setShow(true);
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/artifact/${e.target.id}`, artifacts)
+        .then(response => {
+            let articleTitle = response.data['dc:title'][0].value
+            let articleDescription = response.data['dc:description'][0].value
+            let articleImage = response.data['ecrm:P138_has_representation'][0].value
+            setArtifacts({ name: articleTitle, description: articleDescription, imageurl: articleImage })
+        })
+    }
 
-//     const saveToProfile = (e) => {
-//         e.preventDefault()
-//         axios.post(`${process.env.REACT_APP_SERVER_URL}/profile/artifact/`, artifacts)
-            
-//     }
+    const saveToProfile = (e) => {
+        e.preventDefault()
+        axios.post(`${process.env.REACT_APP_SERVER_URL}/profile/artifact/`, artifacts)
+        handleClose()    
+    }
     
 
     return (
         <div>
-             <div className="modalWindow">
+            <div className="modalWindow">
                 <Modal show={show} className='modalContent'>
                     <Modal.Body>
+
                         <div class="closeButton">
-                            <button class="closeModal" onClick={() => props.handleClose} >&times;</button>
+                            <button class="closeModal" onClick={handleClose} >&times;</button>
                         </div>
                         <h3>{artifacts.name}</h3>
                         <p>{artifacts.description}</p>
@@ -52,20 +53,21 @@ const Pacific = (props) => {
                             <input type="hidden" name="name" value={artifacts.name}></input>
                             <input type="hidden" name="description" value={artifacts.description}></input>
                             <input type="hidden" name="imageurl" value={artifacts.imageurl}></input>
-                            <button type="submit" className="modalButton" onClick={()=> props.saveToProfile}>Save to Profile</button>
+                            <button type="submit" className="modalButton" onClick={saveToProfile}>Save to Profile</button>
+
                         </form>
                     </Modal.Body>
                 </Modal>
             </div>
             <div  className='pacificDiv'>
-            <img className='fishingHook pacificArtifact' id='660574' src='/fishing-hook-pacific.png' alt='fishing hook' onClick={() => props.handleShow}/>
-            <img className='fishingBox pacificArtifact' id='51923' src='/fishing-box-pacific.png' alt='fishing box' onClick={() => props.handleShow}/>
-            <img className='danceDress pacificArtifact' id='42200' src='/dance-dress-pacific.png' alt='dance dress' onClick={() => props.handleShow}/>
-            <img className='fan pacificArtifact' id='42147' src='/fan-pacific.png' alt='fan' onClick={() => props.handleShow}/>
-            <img className='kite pacificArtifact' id='91655' src='/kite-pacific.png' alt='kite' onClick={() => props.handleShow}/>
-            <img className='canoe pacificArtifact' id='86145' src='/model-canoe-pacific.png' alt='model canoe' onClick={() => props.handleShow}/>
-            <img className='wovenMat pacificArtifact' id='67902' src='/woven-mat-pacific.png' alt='woven mat' onClick={() => props.handleShow}/>
-            <img className='waistGarment pacificArtifact' id='52072' src='/waist-garment-pacific.png' alt='waist garment' onClick={() => props.handleShow} />
+            <img className='fishingHook pacificArtifact' id='660574' src='/fishing-hook-pacific.png' alt='fishing hook' onClick={handleShow}/>
+            <img className='fishingBox pacificArtifact' id='635437' src='/fishing-box-pacific.png' alt='fishing box' onClick={handleShow}/>
+            <img className='danceDress pacificArtifact' id='42200' src='/dance-dress-pacific.png' alt='dance dress' onClick={handleShow}/>
+            <img className='fan pacificArtifact' id='42147' src='/fan-pacific.png' alt='fan' onClick={handleShow}/>
+            <img className='kite pacificArtifact' id='91655' src='/kite-pacific.png' alt='kite' onClick={handleShow}/>
+            <img className='canoe pacificArtifact' id='627946' src='/model-canoe-pacific.png' alt='model canoe' onClick={handleShow}/>
+            <img className='wovenMat pacificArtifact' id='67902' src='/woven-mat-pacific.png' alt='woven mat' onClick={handleShow}/>
+            <img className='waistGarment pacificArtifact' id='52072' src='/waist-garment-pacific.png' alt='waist garment' onClick={handleShow} />
             <img className='pacificRoomImg' src='/pacific-room.png' alt='maori and pacific museum room' />
             </div>
         </div>
