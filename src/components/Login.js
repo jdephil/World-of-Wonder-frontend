@@ -12,6 +12,7 @@ const Login = (props) => {
 
   let handleEmail = (e) => {
     setEmail(e.target.value)
+    console.log('AHHHHH')
   }
 
   let handlePassword = (e) => {

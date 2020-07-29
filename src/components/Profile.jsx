@@ -1,4 +1,5 @@
-import React, { Link } from 'react';
+import React from 'react';
+import React from 'react-router-dom'
 
 const Profile = (props) => {
     let userData = props.user

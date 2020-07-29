@@ -17,6 +17,7 @@ import Login from './components/Login';
 import TeamPage from './components/teamPage'
 import axios from 'axios'
 
+
 const PrivateRoute = ({ component: Component, ...rest }) => {
   //get user via jwt token to confirm user authenticated
   const user = localStorage.getItem(`jwtToken`);
@@ -38,6 +39,7 @@ function App() {
     let token;
     if(localStorage.getItem('jwtToken') === null) {
       setIsAuthenticated(false)
+      console.log('AHHHHH')
     } else {
       token = jwt_decode(localStorage.getItem('jwtToken'));
       setAuthToken(localStorage.jwtToken);

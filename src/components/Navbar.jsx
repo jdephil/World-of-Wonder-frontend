@@ -23,7 +23,7 @@ export class Navbar extends Component {
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         {/* <li><NavLink to="/collections">Collections</NavLink></li> */}
-                        <li><NavLink to="/profile">Profile</NavLink></li>
+                        <li><NavLink to="/profile">Profile AHH</NavLink></li>
                         <li><NavLink to="/office">Office</NavLink></li>
                         <li><NavLink to="/signup">Sign Up</NavLink></li>
                         <li><NavLink to="/login">Login</NavLink></li>
