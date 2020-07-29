@@ -1,15 +1,44 @@
-import React, { Component, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import M from 'materialize-css/dist/js/materialize.min.js'
 import '../modals/journal.css'
+import axios from 'axios'
 
 
 const Journal = (props) => {
+    let [title, setTitle] = useState('')
+    let [entry, setEntry] = useState('')
+    let [redirect, setRedirect] = useState(false)
+
+    let handleTitle = (e) => {
+        setTitle(e.target.value)
+    }
+
+    let handleEntry = (e) => {
+        setEntry(e.target.value)
+    }
+
+    let handleSubmit = (e) => {
+        e.preventDefault()
+        const newEntry = {
+            title: title,
+            entry: entry
+        }
+        axios.post(`${process.env.REACT_APP_SERVER_URL}/journal`, newEntry)
+        .then(response => {
+            setRedirect(true)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
 
     useEffect(() => {
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems, {});
       }, []);
+
+      if (redirect) return <Redirect to='/profile' />
 
         return (
             <div>
@@ -21,17 +50,17 @@ const Journal = (props) => {
                     <div id="modal1" className="modal">
                         <h5 class="container modal-close right-align black-text" id="close">&#10005;</h5>
                         <div class="container modal-content center">
-                            <form action="/journal" method="POST">
+                            <form action="/journal" method="POST" onSubmit={handleSubmit}>
                                 <h1 className = "black-text">Journal Entry</h1>
                                 <hr></hr>
                                 <div class="input-field">
                                     <i class="material-icons prefix">title</i>
-                                    <input type="text" name="journalTitle" id="journalTitle" />
+                                    <input type="text" name="title" id="journalTitle" onChange={handleTitle} />
                                     <label for="journalTitle">Title</label>
                                 </div>
                                 <div class="input-field">
                                     <i class="material-icons prefix">create</i>
-                                    <input type="text" name="journalContent" id="journalContent" />
+                                    <input type="text" name="entry" id="journalContent" onChange={handleEntry} />
                                     <label for="journalContent">Content</label>
                                 </div>
                                 <input type="submit" value="Submit" class="black white-text btn" />
@@ -42,7 +71,7 @@ const Journal = (props) => {
                     <div id="modal1" className="modal">
                         <h5 class="container modal-close right-align black-text" id="close">&#10005;</h5>
                         <div class="container modal-content center black-text">
-                            <h3>Please <Link className="blue-text modal-close" to='/login'>login</Link> to start your journal!</h3>
+                            <h3>Please <Link className="blue-text modal-close" to='/login'>login</Link> or <Link className="blue-text modal-close" to='/signup'>sign up</Link> to start your journal!</h3>
                         </div>
                     </div>
                 }
