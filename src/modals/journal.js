@@ -26,6 +26,8 @@ const Journal = (props) => {
         axios.post(`${process.env.REACT_APP_SERVER_URL}/journal`, newEntry)
         .then(response => {
             console.log(response)
+            setTitle('')
+            setEntry('')
         })
         .catch(err => {
             console.log(err)
@@ -52,12 +54,12 @@ const Journal = (props) => {
                                 <hr></hr>
                                 <div class="input-field">
                                     <i class="material-icons prefix">title</i>
-                                    <input type="text" name="title" id="journalTitle" onChange={handleTitle} />
+                                    <input type="text" name="title" id="journalTitle" onChange={handleTitle} value={title} />
                                     <label for="journalTitle">Title</label>
                                 </div>
                                 <div class="input-field">
                                     <i class="material-icons prefix">create</i>
-                                    <input type="text" name="entry" id="journalContent" onChange={handleEntry} />
+                                    <input type="text" name="entry" id="journalContent" onChange={handleEntry} value={entry} />
                                     <label for="journalContent">Content</label>
                                 </div>
                                 <input type="submit" value="Submit" class="black white-text btn modal-close" />
