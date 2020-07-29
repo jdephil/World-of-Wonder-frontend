@@ -8,7 +8,6 @@ import axios from 'axios'
 const Journal = (props) => {
     let [title, setTitle] = useState('')
     let [entry, setEntry] = useState('')
-    let [redirect, setRedirect] = useState(false)
 
     let handleTitle = (e) => {
         setTitle(e.target.value)
@@ -26,7 +25,7 @@ const Journal = (props) => {
         }
         axios.post(`${process.env.REACT_APP_SERVER_URL}/journal`, newEntry)
         .then(response => {
-            setRedirect(true)
+            console.log(response)
         })
         .catch(err => {
             console.log(err)
@@ -37,8 +36,6 @@ const Journal = (props) => {
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems, {});
       }, []);
-
-      if (redirect) return <Redirect to='/profile' />
 
         return (
             <div>
@@ -63,7 +60,7 @@ const Journal = (props) => {
                                     <input type="text" name="entry" id="journalContent" onChange={handleEntry} />
                                     <label for="journalContent">Content</label>
                                 </div>
-                                <input type="submit" value="Submit" class="black white-text btn" />
+                                <input type="submit" value="Submit" class="black white-text btn modal-close" />
                             </form>
                         </div>
                     </div>
