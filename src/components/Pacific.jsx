@@ -41,6 +41,7 @@ const Pacific = () => {
              <div className="modalWindow">
                 <Modal show={show} className='modalContent'>
                     <Modal.Body>
+
                         <div class="closeButton">
                             <button class="closeModal" onClick={handleClose} >&times;</button>
                         </div>
@@ -51,7 +52,10 @@ const Pacific = () => {
                             <input type="hidden" name="name" value={artifacts.name}></input>
                             <input type="hidden" name="description" value={artifacts.description}></input>
                             <input type="hidden" name="imageurl" value={artifacts.imageurl}></input>
+
+
                             <button type="submit" className="modalButton" onClick={saveToProfile}>Save to Profile</button>
+
                         </form>
                     </Modal.Body>
                 </Modal>
@@ -65,7 +69,9 @@ const Pacific = () => {
             <img className='canoe pacificArtifact' id='86145' src='/model-canoe-pacific.png' alt='model canoe' onClick={handleShow}/>
             <img className='wovenMat pacificArtifact' id='67902' src='/woven-mat-pacific.png' alt='woven mat' onClick={handleShow}/>
             <img className='waistGarment pacificArtifact' id='52072' src='/waist-garment-pacific.png' alt='waist garment' onClick={handleShow} />
-            <img className='pacificRoomImg' src='/pacific-room.png' alt='maori and pacific museum room' />
+
+            <img className='pacificRoomImg' src='/pacific-room.png' alt='maori and pacific museum room' onClick={handleShow} />
+
             </div>
         </div>
     );

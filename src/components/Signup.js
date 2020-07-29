@@ -9,6 +9,7 @@ const Signup = () => {
   let [redirect, setRedirect] = useState(false)
   let handleName = (e) => {
     setName(e.target.value)
+    console.log('AHHHHH')
   }
   let handleEmail = (e) => {
     setEmail(e.target.value)

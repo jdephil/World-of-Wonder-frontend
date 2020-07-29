@@ -35,6 +35,7 @@ function App() {
     let token;
     if(localStorage.getItem('jwtToken') === null) {
       setIsAuthenticated(false)
+      console.log('AHHHHH')
     } else {
       token = jwt_decode(localStorage.getItem('jwtToken'));
       setAuthToken(localStorage.jwtToken);
