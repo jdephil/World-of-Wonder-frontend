@@ -37,8 +37,19 @@ export class Navbar extends Component {
                 {/* Burger menu */}
                 <ul class="sidenav" id="mobile-demo">
                     <li><NavLink to="/collections" className="dropdown-trigger link" data-target="dropdown2">Collections</NavLink></li>
-                    <li><NavLink to="/profile" className="link">Profile</NavLink></li>
                     <li><NavLink to="/office" className="link">Office</NavLink></li>
+                    {
+                        this.props.isAuthenticated ?
+                            <>
+                                <li><NavLink to="/profile" className="link">Profile</NavLink></li>
+                                <li><NavLink to="/" className="link" onClick={this.props.handleLogout}>Logout</NavLink></li>
+                            </>
+                        :
+                            <>
+                                <li><NavLink to="/signup" className="link">Sign Up</NavLink></li>
+                                <li><NavLink to="/login" className="link">Login</NavLink></li>
+                            </>
+                    }
                 </ul>
                 <ul id='dropdown1' class='dropdown-content'>
                     <li><NavLink to="/ancientEgypt" className="link">Ancient Egypt</NavLink></li>
