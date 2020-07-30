@@ -30,7 +30,6 @@ const Profile = (props) => {
         }
 
         console.log(response.data)
-
       })
       .catch(err => {
         console.log(err)
@@ -42,26 +41,21 @@ const Profile = (props) => {
   const handleClose = () => setShow(false);
 
   const handleShow = (e) => {
-    console.log(e.target.id)
     setShow(true);
-    // axios.get(`${process.env.REACT_APP_SERVER_URL}/profile`)
-    //   .then(response => {
-
-    //     if (response.status === 200) {
-    //       setArtifact(
-    //         {name:}
-    //       )
-    //     } else {
-    //       setError(response.statusText)
-    //     }
-
-    //     console.log(response.data)
-
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //     setError(err.message)
-    //   })
+    console.log(e.target.id)
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/profile/artifact/${e.target.id}`, artifacts)
+      .then(response => {
+        console.log(response)
+        if (response.status === 200) {
+          setArtifact(response.data)
+        } else {
+          setError(response.statusText)
+        }
+      })
+      .catch(err => {
+        console.log(err)
+        setError(err.message)
+      })
   }
 
   let userData = props.user
@@ -77,30 +71,21 @@ const Profile = (props) => {
     )
   }
 
-  let individualArtifact = () => {
-    return (
-      <div>
-        <h3>{artifact.name}</h3>
-        <p>{artifact.description}</p>
-        <img className="modalImage" src={artifact.imageurl} />
-      </div>
-    )
-  }
 
   let artifactList = artifacts.length < 1 ?
     <h3>There are no favorited artifacts</h3> :
-    artifacts.map((artifact) => (
-      <div className="imageRow">
-        <ul className="test">
-          <li>
-            <h3>{artifact.name}</h3>
-            <img className="savedArtifacts" src={artifact.imageurl} alt="Saved artifacts" onClick={handleShow} />
-          </li>
+    <div className="imageRow">
+    <ul className="test">
+      {artifacts.map((artifact) => (
+        <li>
+          <h3 className = "white-text">{artifact.name}</h3>
+          <img className="savedArtifacts" src={artifact.imageurl} alt="Saved artifacts" id={artifact._id} onClick={handleShow} />
+        </li>
+    ))}
+      
         </ul>
-
-
       </div>
-    ))
+
 
   return (
     <div className="profileBackground">
@@ -115,16 +100,14 @@ const Profile = (props) => {
                 <button class="closeModal" onClick={handleClose} >&times;</button>
               </div>
 
-              {individualArtifact}
-              {/* {artifactList} */}
 
-              <h3>{artifacts.name}</h3>
-              <p>{artifacts.description}</p>
-              <img className="modalImage" src={artifacts.imageurl} />
+              <h3>{artifact.name}</h3>
+              <p>{artifact.description}</p>
+              <img className="modalImage" src={artifact.imageurl} />
               <form>
-                <input type="hidden" name="name" value={artifacts.name}></input>
-                <input type="hidden" name="description" value={artifacts.description}></input>
-                <input type="hidden" name="imageurl" value={artifacts.imageurl}></input>
+                <input type="hidden" name="name" value={artifact.name}></input>
+                <input type="hidden" name="description" value={artifact.description}></input>
+                <input type="hidden" name="imageurl" value={artifact.imageurl}></input>
               </form>
             </Modal.Body>
           </Modal>
