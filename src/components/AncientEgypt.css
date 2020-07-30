@@ -7,6 +7,12 @@
     width: 10%;
     position: absolute;
   }
+
+  .egyptArtifact:hover {
+    background-color: gold;
+    border-radius: 50px;
+    
+  }
   
   .egyptRoomImg {
     justify-content: center;

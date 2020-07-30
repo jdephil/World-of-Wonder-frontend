@@ -25,12 +25,15 @@ const Journal = (props) => {
         }
         axios.post(`${process.env.REACT_APP_SERVER_URL}/journal`, newEntry)
         .then(response => {
-            console.log(response)
+            console.log(`RESPONSE: ${response}`)
             setTitle('')
             setEntry('')
         })
         .catch(err => {
-            console.log(err)
+            let error = String(err)
+            if (error.includes('status code 401')) {
+                props.handleLogout()
+            }
         })
     }
 
