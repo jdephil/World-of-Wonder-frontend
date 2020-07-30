@@ -61,9 +61,9 @@ const Pacific = (props) => {
             </div>
             <div  className='pacificDiv'>
             <img className='fishingHook pacificArtifact' id='660574' src='/fishing-hook-pacific.png' alt='fishing hook' onClick={handleShow}/>
-            <img className='fishingBox pacificArtifact' id='635437' src='/fishing-box-pacific.png' alt='fishing box' onClick={handleShow}/>
+            <img className='fishingBox pacificArtifact' id='635437' src='/fishing-box-pacific2.png' alt='fishing box' onClick={handleShow}/>
             <img className='danceDress pacificArtifact' id='42200' src='/dance-dress-pacific.png' alt='dance dress' onClick={handleShow}/>
-            <img className='fan pacificArtifact' id='42147' src='/fan-pacific.png' alt='fan' onClick={handleShow}/>
+            <img className='fan pacificArtifact' id='42147' src='/fan-pacific2.png' alt='fan' onClick={handleShow}/>
             <img className='kite pacificArtifact' id='91655' src='/kite-pacific.png' alt='kite' onClick={handleShow}/>
             <img className='canoe pacificArtifact' id='627946' src='/model-canoe-pacific.png' alt='model canoe' onClick={handleShow}/>
             <img className='wovenMat pacificArtifact' id='67902' src='/woven-mat-pacific.png' alt='woven mat' onClick={handleShow}/>

@@ -74,7 +74,7 @@ const AncientEgypt = (props) => {
             <img className="egyptArtifact cosmetics hoverable" id='103226' src="egypt/cosmetics-egypt.png" alt="cosmetics" onClick={handleShow} />
             <img className='egyptArtifact writings hoverable' id='597565' src="egypt/writings-egypt.png" alt="writings" onClick={handleShow}/>
             <img className="egyptArtifact mummifiedBirds hoverable" id='33177' src="egypt/mummified-birds-egypt.png" alt="mummified birds" onClick={handleShow} />
-            <img className="egyptArtifact funeralBeads hoverable" id='523731' src="egypt/funeral-beads-egypt.png" alt="funeral beads" onClick={handleShow}/>
+            <img className="egyptArtifact funeralBeads hoverable" id='523731' src="egypt/funeral-beads-egypt2.png" alt="funeral beads" onClick={handleShow}/>
             <img className="egyptRoomImg hoverable" src="egypt/egypt-room.jpg" alt="ancient egyptian museum room" />
         </div>
 
