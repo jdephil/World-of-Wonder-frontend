@@ -16,6 +16,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import TeamPage from './components/teamPage'
 import axios from 'axios'
+import Journal from './components/Journal'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   //get user via jwt token to confirm user authenticated
@@ -98,6 +99,7 @@ function App() {
               <Route path='/nativeAmerican' component={NativeAmerican} />
               <Route path='/ancientEgypt' exact component={AncientEgypt}  />
               <Route path="/" exact component={Office} />
+              <Route path='/journal' component={Journal} />
               <PrivateRoute path="/profile" exact component={Profile} user={currentUser} />
             </Switch>
         </div>
