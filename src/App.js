@@ -16,6 +16,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import TeamPage from './components/teamPage'
 import axios from 'axios'
+import teamPage from './components/teamPage';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   //get user via jwt token to confirm user authenticated
@@ -56,9 +57,9 @@ function App() {
       setIsAuthenticated(false);
     }
   }
+
   console.log('Current User = ', currentUser);
   console.log('Authenticated = ', isAuthenticated);
-
 //   const [show, setShow] = useState(false);
 //   const [artifacts, setArtifacts] = useState({
 //    name: "",
@@ -98,6 +99,7 @@ function App() {
               <Route path='/nativeAmerican' component={NativeAmerican} />
               <Route path='/ancientEgypt' exact component={AncientEgypt}  />
               <Route path="/" exact component={Office} />
+              <Route path ="/teampage" exact component = {teamPage} />
               <PrivateRoute path="/profile" exact component={Profile} user={currentUser} />
             </Switch>
         </div>
