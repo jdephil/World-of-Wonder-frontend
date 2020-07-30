@@ -35,6 +35,22 @@ const Pacific = (props) => {
         axios.post(`${process.env.REACT_APP_SERVER_URL}/profile/artifact/`, artifacts)
         handleClose()    
     }
+
+    var synth = window.speechSynthesis
+    var utterThis = new SpeechSynthesisUtterance(artifacts.description)
+    speechSynthesis.getVoices()
+
+    const startRead = () => {
+        utterThis.lang='en-GB'
+        synth.speak(utterThis)
+        utterThis.onend = () => {
+            synth.cancel()
+        }
+    }
+
+    const stopRead = () => {
+        synth.cancel()
+    }
     
 
     return (
@@ -47,6 +63,10 @@ const Pacific = (props) => {
                             <button class="closeModal" onClick={handleClose} >&times;</button>
                         </div>
                         <h3>{artifacts.name}</h3>
+                        <p>
+                            <i onClick={startRead} className='material-icons'>play_arrow</i>
+                            <i onClick={stopRead} className='material-icons'>stop</i>
+                        </p>
                         <p>{artifacts.description}</p>
                         <img className="modalImage" src={artifacts.imageurl} />
                         <form>

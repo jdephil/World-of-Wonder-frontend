@@ -55,12 +55,10 @@ export class Navbar extends Component {
                 <ul id='dropdown1' class='dropdown-content'>
                     <li><NavLink to="/ancientEgypt" className="link">Ancient Egypt</NavLink></li>
                     <li><NavLink to="/pacific" className="link">Pacific</NavLink></li>
-                    <li><NavLink to="/NativeAmerican" className="link">Native American</NavLink></li>
                 </ul>
                 <ul id='dropdown2' class='dropdown-content'>
                     <li><NavLink to="/ancientEgypt" className="link">Ancient Egypt</NavLink></li>
                     <li><NavLink to="/pacific" className="link">Pacific</NavLink></li>
-                    <li><NavLink to="/NativeAmerican" className="link">Native American</NavLink></li>
                 </ul>
                 <Journal isAuthenticated={this.props.isAuthenticated} handleLogout={this.props.handleLogout} nowCurrentUser={this.props.nowCurrentUser} isAuthenticated={this.props.isAuthenticated} />
             </nav >
