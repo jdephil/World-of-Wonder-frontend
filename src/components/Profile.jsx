@@ -93,6 +93,22 @@ const Profile = (props) => {
     handleClose()
   }
 
+  var synth = window.speechSynthesis
+  var utterThis = new SpeechSynthesisUtterance(artifact.description)
+  speechSynthesis.getVoices()
+
+  const startRead = () => {
+      utterThis.lang='en-GB'
+      synth.speak(utterThis)
+      utterThis.onend = () => {
+          synth.cancel()
+      }
+  }
+
+  const stopRead = () => {
+      synth.cancel()
+  }
+
 
   return (
     <div className="profileBackground">
@@ -109,6 +125,10 @@ const Profile = (props) => {
 
 
               <h3>{artifact.name}</h3>
+              <p>
+                  <i onClick={startRead} className='material-icons'>play_arrow</i>
+                  <i onClick={stopRead} className='material-icons'>stop</i>
+              </p>
               <p>{artifact.description}</p>
               <img className="modalImage" src={artifact.imageurl} />
               <form>
