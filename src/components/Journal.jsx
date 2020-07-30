@@ -53,7 +53,7 @@ const Journal = () => {
  
 
   return (
-    <div>
+    <div className="Journal">
       <h3>Table of Contents</h3>
       <ul>
         {journalEntries.map(entry => (
