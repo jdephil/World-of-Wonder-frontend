@@ -17,13 +17,14 @@ const AncientEgypt = (props) => {
     })
 
     const handleShow = (e) => {
-        console.log(e.target.id)
         setShow(true);
+        let defaultImage = e.target.src
         axios.get(`${process.env.REACT_APP_SERVER_URL}/artifact/${e.target.id}`, artifacts)
             .then(response => {
                 let articleTitle = response.data['dc:title'][0].value
                 let articleDescription = response.data['dc:description'][0].value
-                let articleImage = response.data['ecrm:P138_has_representation'][0].value
+                let articleImage
+                response.data['ecrm:P138_has_representation'][0].value != "http://api.aucklandmuseum.com/id/media/v/522285" ? articleImage = response.data['ecrm:P138_has_representation'][0].value : articleImage = defaultImage
                 setArtifacts({ name: articleTitle, description: articleDescription, imageurl: articleImage })
             })
     }

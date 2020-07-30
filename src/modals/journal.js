@@ -8,6 +8,7 @@ import axios from 'axios'
 const Journal = (props) => {
     let [title, setTitle] = useState('')
     let [entry, setEntry] = useState('')
+    let [redirect, setRedirect] = useState(false)
 
     let handleTitle = (e) => {
         setTitle(e.target.value)
@@ -33,6 +34,7 @@ const Journal = (props) => {
             let error = String(err)
             if (error.includes('status code 401')) {
                 props.handleLogout()
+                setRedirect(true)
             }
         })
     }
@@ -41,6 +43,8 @@ const Journal = (props) => {
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems, {});
       }, []);
+
+        if (redirect) return <Redirect to="/login" />
 
         return (
             <div>
