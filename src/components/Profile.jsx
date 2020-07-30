@@ -86,6 +86,12 @@ const Profile = (props) => {
         </ul>
       </div>
 
+  const removeFromProfile = (e) => {
+    e.preventDefault()
+    axios.delete(`${process.env.REACT_APP_SERVER_URL}/profile/artifact/${e.target.id}`, artifacts)
+    handleClose()
+  }
+
 
   return (
     <div className="profileBackground">
@@ -108,6 +114,7 @@ const Profile = (props) => {
                 <input type="hidden" name="name" value={artifact.name}></input>
                 <input type="hidden" name="description" value={artifact.description}></input>
                 <input type="hidden" name="imageurl" value={artifact.imageurl}></input>
+                <button type="submit" className="modalButton" onClick={removeFromProfile}>Remove from Profile</button>
               </form>
             </Modal.Body>
           </Modal>

@@ -47,6 +47,7 @@ const AncientEgypt = (props) => {
                         <h3>{artifacts.name}</h3>
                         <p>{artifacts.description}</p>
                         <img className="modalImage" src={artifacts.imageurl} />
+                        
                         <form>
                             <input type="hidden" name="name" value={artifacts.name}></input>
                             <input type="hidden" name="description" value={artifacts.description}></input>
