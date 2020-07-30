@@ -66,6 +66,7 @@ const Profile = (props) => {
     : <h4>Loading...</h4>
 
   let errorDiv = () => {
+
     return (
       <div className="text-center pt-4"><h3>Please <Link to='/login'>login</Link> to view this page</h3></div>
     )
@@ -118,8 +119,15 @@ const Profile = (props) => {
         {artifactList}
 
       </div>
+      <div>
+        <Link to='/journal'>
+          <img id="journalImage" src="/books.png" alt="books" />
+        </Link>
+      </div>
     </div>
-  )
-};
+  
+)
+}
+  
 
 export default Profile;
