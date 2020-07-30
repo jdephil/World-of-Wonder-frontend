@@ -33,7 +33,6 @@ const Office = () => {
                     </div>
                     <Link className='egyptPortalLink' to='/ancientEgypt'></Link>
                     <Link className='pacificPortalLink' to='/pacific'></Link>
-                    <Link className='nativePortalLink' to='/nativeAmerican'></Link>
                 </div>
             </main>
     );

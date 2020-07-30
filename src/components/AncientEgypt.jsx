@@ -34,6 +34,22 @@ const AncientEgypt = (props) => {
         handleClose()
     }
 
+    var synth = window.speechSynthesis
+    var utterThis = new SpeechSynthesisUtterance(artifacts.description)
+    speechSynthesis.getVoices()
+
+    const startRead = () => {
+        utterThis.lang='en-GB'
+        synth.speak(utterThis)
+        utterThis.onend = () => {
+            synth.cancel()
+        }
+    }
+
+    const stopRead = () => {
+        synth.cancel()
+    }
+
     return (
         <div class="egyptDiv">
              <div className="modalWindow">
@@ -44,6 +60,10 @@ const AncientEgypt = (props) => {
                             <button class="closeModal" onClick={handleClose} >&times;</button>
                         </div>
                         <h3>{artifacts.name}</h3>
+                        <p>
+                            <i onClick={startRead} className='material-icons'>play_arrow</i>
+                            <i onClick={stopRead} className='material-icons'>stop</i>
+                        </p>
                         <p>{artifacts.description}</p>
                         <img className="modalImage" src={artifacts.imageurl} />
                         
@@ -63,7 +83,6 @@ const AncientEgypt = (props) => {
 
                     <h3>Name :  {artifacts.name}</h3>
                     <p>Description :  {artifacts.description}</p>
-
                     <img src={artifacts.imageurl} />
 
                 </div>

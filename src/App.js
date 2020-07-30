@@ -100,7 +100,6 @@ function App() {
               <Route path='/signup' component={ Signup } />
               <Route path='/login' render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />
               <Route path='/pacific' component={Pacific} />
-              <Route path='/nativeAmerican' component={NativeAmerican} />
               <Route path='/ancientEgypt' exact component={AncientEgypt}  />
               <Route path="/" exact component={Office} />
               <Route path='/journal' component={Journal} />
