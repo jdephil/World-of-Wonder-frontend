@@ -3,6 +3,7 @@ import './AncientEgypt.css'
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from 'react-bootstrap/Modal';
+import Particles from 'react-particles-js'
 
 
 
