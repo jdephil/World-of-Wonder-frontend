@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import Journal from '../modals/journal.js'
+
 export class Navbar extends Component {
     componentDidMount() {
         document.addEventListener('DOMContentLoaded', function () {
@@ -61,7 +62,7 @@ export class Navbar extends Component {
                     <li><NavLink to="/pacific" className="link">Pacific</NavLink></li>
                     <li><NavLink to="/NativeAmerican" className="link">Native American</NavLink></li>
                 </ul>
-                <Journal isAuthenticated={this.props.isAuthenticated} />
+                <Journal isAuthenticated={this.props.isAuthenticated} handleLogout={this.props.handleLogout} nowCurrentUser={this.props.nowCurrentUser} isAuthenticated={this.props.isAuthenticated} />
             </nav >
         );
     };

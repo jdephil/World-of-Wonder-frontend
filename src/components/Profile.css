@@ -1,0 +1,22 @@
+.profileBackground {
+    min-width: 100%;
+    min-height: 90vh;
+    background-repeat: no-repeat;
+    background-image: url('/profile-background.png');
+    background-size: cover;
+}
+
+.savedArtifacts{
+    width: 100%;
+    height: auto;
+}
+
+.test {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.imageRow {
+    width:100%;
+}

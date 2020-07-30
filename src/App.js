@@ -16,7 +16,13 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import TeamPage from './components/teamPage'
 import axios from 'axios'
+<<<<<<< HEAD
 import Journal from './components/Journal'
+=======
+import teamPage from './components/teamPage';
+
+
+>>>>>>> 309c8b3ec077d450fecb697278aa5b8bafd105b4
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   //get user via jwt token to confirm user authenticated
@@ -30,6 +36,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   />
 }
 function App() {
+
   // set state values
   let [currentUser, setCurrentUser] = useState("")
   let [isAuthenticated, setIsAuthenticated] = useState(true)
@@ -57,9 +64,9 @@ function App() {
       setIsAuthenticated(false);
     }
   }
+
   console.log('Current User = ', currentUser);
   console.log('Authenticated = ', isAuthenticated);
-
 //   const [show, setShow] = useState(false);
 //   const [artifacts, setArtifacts] = useState({
 //    name: "",
@@ -99,7 +106,11 @@ function App() {
               <Route path='/nativeAmerican' component={NativeAmerican} />
               <Route path='/ancientEgypt' exact component={AncientEgypt}  />
               <Route path="/" exact component={Office} />
+<<<<<<< HEAD
               <Route path='/journal' component={Journal} />
+=======
+              <Route path ="/teampage" exact component = {teamPage} />
+>>>>>>> 309c8b3ec077d450fecb697278aa5b8bafd105b4
               <PrivateRoute path="/profile" exact component={Profile} user={currentUser} />
             </Switch>
         </div>
