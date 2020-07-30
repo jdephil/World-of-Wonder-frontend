@@ -1,0 +1,19 @@
+#journalImage {
+  height: 100px;
+  width: 100px;
+}
+
+#journalModal {
+  background-image: url("/openJournal.png");
+  background-size: cover;
+}
+
+.formLabel {
+  color: #ee6e73;
+  font-weight: bold;
+}
+
+.formInput {
+  color: white;
+  font-weight: bold;
+}
