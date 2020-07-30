@@ -18,6 +18,8 @@ import TeamPage from './components/teamPage'
 import axios from 'axios'
 import teamPage from './components/teamPage';
 
+
+
 const PrivateRoute = ({ component: Component, ...rest }) => {
   //get user via jwt token to confirm user authenticated
   const user = localStorage.getItem(`jwtToken`);
@@ -30,6 +32,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   />
 }
 function App() {
+
   // set state values
   let [currentUser, setCurrentUser] = useState("")
   let [isAuthenticated, setIsAuthenticated] = useState(true)
