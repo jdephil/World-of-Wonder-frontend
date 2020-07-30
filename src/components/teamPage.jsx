@@ -21,9 +21,6 @@ const teamPage = () => {
                         </a>
 
 
-
-
-
                     </div>
                     <div className="col s12 m6 l6">
                         <div class="">

@@ -1,0 +1,19 @@
+.profileBackground {
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url('/profile-background.png');
+    background-size: cover;
+}
+
+.savedArtifacts{
+    width: 25%;
+    height:25%;
+}
+
+.test {
+    display: inline;
+}
+
+.imageRow {
+    display: inline;
+}
