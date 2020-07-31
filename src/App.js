@@ -28,7 +28,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   return <Route {...rest} render={(props) => (
       user
           ? <Component {...rest} {...props} />
-          : <Redirect to='login' />
+          : <Redirect to='/login' />
       )} 
   />
 }
@@ -72,7 +72,7 @@ function App() {
           <div className="react-router-logic">
             <Switch>
               <Route path='/signup' component={ Signup } />
-              <Route path='login' render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />
+              <Route path='/login' render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />
               <Route path='/pacific' component={Pacific} />
               <Route path='/ancientEgypt' exact component={AncientEgypt}  />
               <Route path="/" exact component={Office} />
