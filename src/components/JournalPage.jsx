@@ -36,6 +36,8 @@ const JournalPage = () => {
       axios.get(`${process.env.REACT_APP_SERVER_URL}journal/${e.target.id}`, journalEntry)
         .then(response => {
           console.log(response.data)
+          setTitle(response.data.title)
+          setEntry(response.data.entry)
           setJournalEntry({title: response.data.title, entry: response.data.entry, id: response.data._id})
           console.log(journalEntry)
         })
@@ -48,16 +50,7 @@ const JournalPage = () => {
       // } 
       // if (entry === "") {
       //   entry = journalEntry.entry
-      // } 
-
-      if (title === "") {
-        console.log("set title")
-        setTitle(journalEntry.title)
-      } 
-      if (entry === "") {
-        console.log("set entry")
-        setEntry(journalEntry.entry)
-      } 
+      // }  
       let updatedEntry = {title: title, entry: entry}
       console.log(updatedEntry)
       axios.put(`${process.env.REACT_APP_SERVER_URL}journal/${journalEntry.id}`, updatedEntry)
