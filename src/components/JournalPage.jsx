@@ -13,44 +13,47 @@ const JournalPage = () => {
     axios.get(`${process.env.REACT_APP_SERVER_URL}/journal`, journalEntries)
           .then(response => {
             setJournalEntries(response.data)
-            console.log(journalEntries)
           })
           .catch(error => console.log(error))
   }, [])
 
     const [showModal, setShowModal] = useState(false);
     const [journalEntry, setJournalEntry] = useState({
-      id: "",
       title: "",
       entry: ""
     })
  
     const handleCloseModal = () => setShowModal(false);
-      
-    const handleShowJournal = () => {
-      setShowModal(true);
-      axios.get(`${process.env.REACT_APP_SERVER_URL}/journal`, journalEntries)
-          .then(response => {
-            setJournalEntries(response.data)
-          })
-      }
     
     const openJournal = (e) => {
       setShowModal(true)
-      axios.get(`${process.env.REACT_APP_SERVER_URL}/journal/${e.target.id}`, journalEntries)
+      axios.get(`${process.env.REACT_APP_SERVER_URL}/journal/${e.target.id}`, journalEntry)
         .then(response => {
           console.log(response.data)
-          setJournalEntry(response.data)
+          setJournalEntry({title: response.data.title, entry: response.data.entry})
+          console.log(journalEntry)
         })
-      console.log(journalEntry)
+    }
+
+    let editJournalEntry = (e) => {
+      e.preventDefault()
+      console.log(e.target)
+      axios.put(`${process.env.REACT_APP_SERVER_URL}/journal/${e.target.id}`, journalEntry)
+      .then(response => {
+          console.log(`RESPONSE: ${response}`)
+          setJournalEntry(response.data)
+      })
+      .catch(err => console.log(err))
     }
      
-    const editJournalEntry = () => {
-      axios.put(`${process.env.REACT_APP_SERVER_URL}/journal/:id`, journalEntries)
-        .then(response => {
-          setJournalEntry(response.data)
-        })
-    }
+    // const editJournalEntry = (e) => {
+    //   console.log("ISTHIS WORKING")
+    //   axios.put(`${process.env.REACT_APP_SERVER_URL}/journal/${e.target.id}`, journalEntry)
+    //     .then(response => {
+    //       console.log(response.data)
+    //       setJournalEntry(response.data)
+    //     })
+    // }
  
 
   return (
@@ -75,12 +78,12 @@ const JournalPage = () => {
                   <button class="closeModal" onClick={handleCloseModal} >&times;</button>
               </div>
             <div class="editJournalEntry">
-                <form>
+                <form action="/journal/:id" method="POST" onSubmit={editJournalEntry}>
                   <label for="title" className="formLabel">Edit Title:</label>
-                  <input type="text" placeholder={journalEntry.title} className="formInput" ></input>
+                  <input type="text" placeholder={journalEntry.title} id={journalEntry._id} className="formInput" ></input>
                   <label for="entry" className="formLabel">Edit Entry:</label>
                   <input type="text" placeholder={journalEntry.entry} ></input>
-                  <button type="submit" className="modalButton" value="Edit Entry" className="formInput" onClick={editJournalEntry}>Edit Journal Entry</button>
+                  <input type="submit" className="modalButton" id={journalEntry._id} value="Edit Journal Entry"></input>
                 </form>
               </div>
           </Modal.Body>
