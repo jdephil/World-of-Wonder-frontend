@@ -7,6 +7,8 @@ import axios from 'axios'
 
 const Journal = () => {
   const [journalEntries, setJournalEntries] = useState([])
+  const [title, setTitle] = useState([]);
+  const [entry, setEntry] = useState([]);
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_SERVER_URL}/journal`, journalEntries)
@@ -43,9 +45,18 @@ const Journal = () => {
           console.log(`RESPONSE: ${response}`)
           console.log(response.data)
           setJournalEntry(response.data)
+          console.log(journalEntry)
           
       })
       .catch(err => console.log(err))
+    }
+
+    let handleTitle = (e) => {
+      setTitle(e.target.value)
+    }
+
+    let handleEntry = (e) => {
+        etEntry(e.target.value)
     }
      
     // const editJournalEntry = (e) => {
@@ -73,11 +84,11 @@ const Journal = () => {
                   <button class="closeModal" onClick={handleCloseModal} >&times;</button>
               </div>
             <div class="editJournalEntry">
-                <form action="/journal/:id" method="POST" onSubmit={editJournalEntry}>
+                <form onSubmit={editJournalEntry}>
                   <label for="title" className="formLabel">Edit Title:</label>
-                  <input type="text" placeholder={journalEntry.title} id={journalEntry._id} className="formInput" ></input>
+                  <input type="text" placeholder={journalEntry.title} id={journalEntry._id} className="formInput" onChange={handleTitle}></input>
                   <label for="entry" className="formLabel">Edit Entry:</label>
-                  <input type="text" placeholder={journalEntry.entry} ></input>
+                  <input type="text" placeholder={journalEntry.entry} onChange={handleEntry}></input>
                   <input type="submit" className="modalButton" id={journalEntry._id} value="Edit Journal Entry"></input>
                 </form>
               </div>
