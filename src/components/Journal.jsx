@@ -18,6 +18,7 @@ const Journal = () => {
 
     const [showModal, setShowModal] = useState(false);
     const [journalEntry, setJournalEntry] = useState({
+      id: "",
       title: "",
       entry: ""
     })
@@ -29,18 +30,20 @@ const Journal = () => {
       axios.get(`${process.env.REACT_APP_SERVER_URL}/journal/${e.target.id}`, journalEntry)
         .then(response => {
           console.log(response.data)
-          setJournalEntry({title: response.data.title, entry: response.data.entry})
+          setJournalEntry({title: response.data.title, entry: response.data.entry, id: response.data._id})
           console.log(journalEntry)
         })
     }
 
     let editJournalEntry = (e) => {
       e.preventDefault()
-      console.log(e.target)
-      axios.put(`${process.env.REACT_APP_SERVER_URL}/journal/${e.target.id}`, journalEntry)
+      console.log(journalEntry.id)
+      axios.put(`${process.env.REACT_APP_SERVER_URL}/journal/${journalEntry.id}`, journalEntry)
       .then(response => {
           console.log(`RESPONSE: ${response}`)
+          console.log(response.data)
           setJournalEntry(response.data)
+          
       })
       .catch(err => console.log(err))
     }
