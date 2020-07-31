@@ -5,11 +5,19 @@ import Modal from 'react-bootstrap/Modal';
 import './modal.css'
 import axios from 'axios'
 import './JournalPage.css'
+import { connect } from 'mongoose';
 
 const JournalPage = () => {
   const [journalEntries, setJournalEntries] = useState([])
-  const [title, setTitle] = useState([]);
-  const [entry, setEntry] = useState([]);
+  const [title, setTitle] = useState("");
+  const [entry, setEntry] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [journalEntry, setJournalEntry] = useState({
+    id: "",
+    title: "",
+    entry: ""
+  })
+
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_SERVER_URL}/journal`, journalEntries)
@@ -19,12 +27,7 @@ const JournalPage = () => {
           .catch(error => console.log(error))
   }, [])
 
-    const [showModal, setShowModal] = useState(false);
-    const [journalEntry, setJournalEntry] = useState({
-      id: "",
-      title: "",
-      entry: ""
-    })
+   
  
     const handleCloseModal = () => setShowModal(false);
     
@@ -40,35 +43,33 @@ const JournalPage = () => {
 
     let editJournalEntry = (e) => {
       e.preventDefault()
-      console.log(journalEntry.id)
-      axios.put(`${process.env.REACT_APP_SERVER_URL}/journal/${journalEntry.id}`, journalEntry)
+      if (title === "") {
+        title = journalEntry.title
+      } 
+      if (entry === "") {
+        entry = journalEntry.entry
+      } 
+      let updatedEntry = {title: title, entry: entry}
+      console.log(updatedEntry)
+      axios.put(`${process.env.REACT_APP_SERVER_URL}/journal/${journalEntry.id}`, updatedEntry)
       .then(response => {
           console.log(`RESPONSE: ${response}`)
           console.log(response.data)
-          setJournalEntry(response.data)
-          console.log(journalEntry)
-          
+          setShowModal(false)
+        
       })
       .catch(err => console.log(err))
     }
 
-    let handleTitle = (e) => {
-      setTitle(e.target.value)
-    }
+    let deleteEntry = (e) => {
+      e.preventDefault()
+      axios.delete(`${process.env.REACT_APP_SERVER_URL}/journal/${journalEntry.id}`)
+        .then(response => {
+          console.log(response)
 
-    let handleEntry = (e) => {
-        etEntry(e.target.value)
+        })
+
     }
-     
-    // const editJournalEntry = (e) => {
-    //   console.log("ISTHIS WORKING")
-    //   axios.put(`${process.env.REACT_APP_SERVER_URL}/journal/${e.target.id}`, journalEntry)
-    //     .then(response => {
-    //       console.log(response.data)
-    //       setJournalEntry(response.data)
-    //     })
-    // }
- 
 
   return (
     <div className="journalPage">
@@ -94,10 +95,13 @@ const JournalPage = () => {
             <div class="editJournalEntry">
                 <form onSubmit={editJournalEntry}>
                   <label for="title" className="formLabel">Edit Title:</label>
-                  <input type="text" placeholder={journalEntry.title} id={journalEntry._id} className="formInput" onChange={handleTitle}></input>
+                  <input type="text" placeholder={journalEntry.title} value={title} id={journalEntry._id} className="formInput" onChange={(e) => {setTitle(e.target.value)}}></input>
                   <label for="entry" className="formLabel">Edit Entry:</label>
-                  <input type="text" placeholder={journalEntry.entry} onChange={handleEntry}></input>
-                  <input type="submit" className="modalButton" id={journalEntry._id} value="Edit Journal Entry"></input>
+                  <input type="text" placeholder={journalEntry.entry} value={entry} ></input>
+                  <input type="submit" className="modalButton" id={journalEntry._id} value="Edit Journal Entry" onChange={(e) => {setEntry(e.target.value)}}></input>
+                </form>
+                <form onSubmit={deleteEntry}>
+                  <input type="submit" className="modalButton" value="Delete Entry"></input>
                 </form>
               </div>
           </Modal.Body>
