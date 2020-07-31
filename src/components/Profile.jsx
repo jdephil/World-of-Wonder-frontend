@@ -71,7 +71,7 @@ const Profile = (props) => {
   let errorDiv = () => {
 
     return (
-      <div className="text-center pt-4"><h3>Please <Link to='/login'>login</Link> to view this page</h3></div>
+      <div className="text-center pt-4"><h3>Please <Link to='login'>login</Link> to view this page</h3></div>
     )
   }
 
