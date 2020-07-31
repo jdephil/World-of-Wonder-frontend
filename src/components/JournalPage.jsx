@@ -18,7 +18,7 @@ const JournalPage = () => {
     entry: ""
   })
 
-  function getJournalStuff() {
+  const getAllEntries = () => {
     axios.get(`${process.env.REACT_APP_SERVER_URL}journal`, journalEntries)
           .then(response => {
             setJournalEntries(response.data)
@@ -27,7 +27,7 @@ const JournalPage = () => {
   }
 
   useEffect(() => {
-    getJournalStuff()
+    getAllEntries()
   }, [])
 
    
@@ -54,7 +54,7 @@ const JournalPage = () => {
       .then(response => {
           console.log(`RESPONSE: ${response}`)
           console.log(response.data)
-          getJournalStuff()
+          getAllEntries()
           setShowModal(false)
 
       })
