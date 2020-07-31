@@ -18,13 +18,16 @@ const JournalPage = () => {
     entry: ""
   })
 
-
-  useEffect(() => {
+  function getJournalStuff() {
     axios.get(`${process.env.REACT_APP_SERVER_URL}journal`, journalEntries)
           .then(response => {
             setJournalEntries(response.data)
           })
           .catch(error => console.log(error))
+  }
+
+  useEffect(() => {
+    getJournalStuff()
   }, [])
 
    
@@ -45,20 +48,15 @@ const JournalPage = () => {
 
     let editJournalEntry = (e) => {
       e.preventDefault()
-      // if (title === "") {
-      //   title = journalEntry.title
-      // } 
-      // if (entry === "") {
-      //   entry = journalEntry.entry
-      // }  
       let updatedEntry = {title: title, entry: entry}
       console.log(updatedEntry)
       axios.put(`${process.env.REACT_APP_SERVER_URL}journal/${journalEntry.id}`, updatedEntry)
       .then(response => {
           console.log(`RESPONSE: ${response}`)
           console.log(response.data)
+          getJournalStuff()
           setShowModal(false)
-        
+
       })
       .catch(err => console.log(err))
     }
