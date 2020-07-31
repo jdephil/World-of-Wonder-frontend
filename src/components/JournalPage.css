@@ -36,5 +36,18 @@
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
+}
 
+.formInput {
+  font-weight: bold;
+  color: white;
+  margin-left: 50%;
+  text-align: center;
+}
+
+.formLabel {
+  font-weight: bold;
+  color: black;
+  margin-left: 50%;
+  text-align: center;
 }

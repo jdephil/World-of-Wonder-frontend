@@ -97,7 +97,7 @@ const JournalPage = () => {
                   <label for="title" className="formLabel">Edit Title:</label>
                   <input type="text" placeholder={journalEntry.title} value={title} id={journalEntry._id} className="formInput" onChange={(e) => {setTitle(e.target.value)}}></input>
                   <label for="entry" className="formLabel">Edit Entry:</label>
-                  <input type="text" placeholder={journalEntry.entry} value={entry} ></input>
+                  <input type="text" className="formInput" placeholder={journalEntry.entry} value={entry} ></input>
                   <input type="submit" className="modalButton" id={journalEntry._id} value="Edit Journal Entry" onChange={(e) => {setEntry(e.target.value)}}></input>
                 </form>
                 <form onSubmit={deleteEntry}>
