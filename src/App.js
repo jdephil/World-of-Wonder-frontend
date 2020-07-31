@@ -16,7 +16,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import TeamPage from './components/teamPage'
 import axios from 'axios'
-import Journal from './components/Journal'
+import JournalPage from './components/JournalPage'
 import teamPage from './components/teamPage';
 
 
@@ -41,7 +41,6 @@ function App() {
     let token;
     if(localStorage.getItem('jwtToken') === null) {
       setIsAuthenticated(false)
-      console.log('AHHHHH')
     } else {
       token = jwt_decode(localStorage.getItem('jwtToken'));
       setAuthToken(localStorage.jwtToken);
@@ -102,9 +101,9 @@ function App() {
               <Route path='/pacific' component={Pacific} />
               <Route path='/ancientEgypt' exact component={AncientEgypt}  />
               <Route path="/" exact component={Office} />
-              <Route path='/journal' component={Journal} />
               <Route path ="/teampage" exact component = {teamPage} />
               <PrivateRoute path="/profile" exact component={Profile} user={currentUser} />
+              <Route path='/journal' component={JournalPage} />
             </Switch>
         </div>
         <Footer />

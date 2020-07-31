@@ -21,13 +21,13 @@
 }
 
 @media screen and (max-width: 2000px) {
-  .nativePortalLink {
+  /* .nativePortalLink {
     padding-bottom: 15vw;
     padding-left: 15vw;
     top: 8vw;
     left: 25vw;
     position: absolute;
-  }
+  } */
 
   .egyptPortalLink {
     padding-bottom: 15vw;
