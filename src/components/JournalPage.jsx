@@ -43,11 +43,20 @@ const JournalPage = () => {
 
     let editJournalEntry = (e) => {
       e.preventDefault()
+      // if (title === "") {
+      //   title = journalEntry.title
+      // } 
+      // if (entry === "") {
+      //   entry = journalEntry.entry
+      // } 
+
       if (title === "") {
-        title = journalEntry.title
+        console.log("set title")
+        setTitle(journalEntry.title)
       } 
       if (entry === "") {
-        entry = journalEntry.entry
+        console.log("set entry")
+        setEntry(journalEntry.entry)
       } 
       let updatedEntry = {title: title, entry: entry}
       console.log(updatedEntry)
