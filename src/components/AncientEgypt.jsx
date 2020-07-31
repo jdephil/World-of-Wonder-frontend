@@ -8,7 +8,10 @@ import Modal from 'react-bootstrap/Modal';
 const AncientEgypt = (props) => {
 
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false)
+        stopRead()
+    }
     const [artifacts, setArtifacts] = useState({
         name: "",
         description: "",

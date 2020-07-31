@@ -4,8 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from 'react-bootstrap/Modal';
 import './modal.css'
 import axios from 'axios'
+import './JournalPage.css'
 
-const Journal = () => {
+const JournalPage = () => {
   const [journalEntries, setJournalEntries] = useState([])
   const [title, setTitle] = useState([]);
   const [entry, setEntry] = useState([]);
@@ -70,13 +71,20 @@ const Journal = () => {
  
 
   return (
-    <div>
-      <h3>Table of Contents</h3>
-      <ul>
-        {journalEntries.map(entry => (
-            <li key={entry.title} id={entry._id} onClick={openJournal}>{entry.title}</li>
-        ))}
-      </ul>
+    <div className="journalPage">
+        <div className='jbgDiv'>
+          <div className='tocDiv'>
+            <h3 className='toc'>Table of Contents</h3>
+          </div>
+          <div className='entriesDiv'>
+            <ul className='entriesList'>
+              {journalEntries.map(entry => (
+                  <li key={entry.title} id={entry._id} onClick={openJournal}>{entry.title}</li>
+              ))}
+            </ul>
+          </div>
+        <img className='journalBackground' src='journalBackground.png' alt='journal with map and glasses near it' />
+      </div>
       <div className="modalWindow">
       <Modal show={showModal} className='modalContent'>
           <Modal.Body id="journalModal">
@@ -95,8 +103,10 @@ const Journal = () => {
           </Modal.Body>
       </Modal>
     </div>
+
+    
   </div>
   )
 }
 
-export default Journal;
+export default JournalPage;

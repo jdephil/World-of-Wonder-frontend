@@ -38,7 +38,10 @@ const Profile = (props) => {
   }, [])
 
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false)
+    stopRead()
+  }
 
   const handleShow = (e) => {
     setShow(true);
