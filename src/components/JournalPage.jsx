@@ -18,13 +18,16 @@ const JournalPage = () => {
     entry: ""
   })
 
-
-  useEffect(() => {
+  const getAllEntries = () => {
     axios.get(`${process.env.REACT_APP_SERVER_URL}journal`, journalEntries)
           .then(response => {
             setJournalEntries(response.data)
           })
           .catch(error => console.log(error))
+  }
+
+  useEffect(() => {
+    getAllEntries()
   }, [])
 
    
@@ -36,6 +39,8 @@ const JournalPage = () => {
       axios.get(`${process.env.REACT_APP_SERVER_URL}journal/${e.target.id}`, journalEntry)
         .then(response => {
           console.log(response.data)
+          setTitle(response.data.title)
+          setEntry(response.data.entry)
           setJournalEntry({title: response.data.title, entry: response.data.entry, id: response.data._id})
           console.log(journalEntry)
         })
@@ -43,20 +48,15 @@ const JournalPage = () => {
 
     let editJournalEntry = (e) => {
       e.preventDefault()
-      if (title === "") {
-        title = journalEntry.title
-      } 
-      if (entry === "") {
-        entry = journalEntry.entry
-      } 
       let updatedEntry = {title: title, entry: entry}
       console.log(updatedEntry)
       axios.put(`${process.env.REACT_APP_SERVER_URL}journal/${journalEntry.id}`, updatedEntry)
       .then(response => {
           console.log(`RESPONSE: ${response}`)
           console.log(response.data)
+          getAllEntries()
           setShowModal(false)
-        
+
       })
       .catch(err => console.log(err))
     }
@@ -66,7 +66,8 @@ const JournalPage = () => {
       axios.delete(`${process.env.REACT_APP_SERVER_URL}journal/${journalEntry.id}`)
         .then(response => {
           console.log(response)
-
+          getAllEntries()
+          setShowModal(false)
         })
 
     }
@@ -95,9 +96,9 @@ const JournalPage = () => {
             <div class="editJournalEntry">
                 <form onSubmit={editJournalEntry}>
                   <label for="title" className="formLabel">Edit Title:</label>
-                  <input type="text" placeholder={journalEntry.title} value={title} id={journalEntry._id} className="formInput" onChange={(e) => {setTitle(e.target.value)}}></input>
+                  <input type="text" value={title} className="formInput" onChange={(e) => {setTitle(e.target.value)}}></input>
                   <label for="entry" className="formLabel">Edit Entry:</label>
-                  <input type="text" placeholder={journalEntry.entry} value={entry} ></input>
+                  <input type="text" className="formInput"  value={entry} onChange={(e) => {setEntry(e.target.value)}}></input>
                   <input type="submit" className="modalButton" id={journalEntry._id} value="Edit Journal Entry" onChange={(e) => {setEntry(e.target.value)}}></input>
                 </form>
                 <form onSubmit={deleteEntry}>
