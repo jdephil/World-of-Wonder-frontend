@@ -7,6 +7,7 @@ Hover: https://www.cssmatic.com/box-shadow
 
 Image credits: 
 https://commons.wikimedia.org/wiki/File:Ceramic_Sculpture_Exhibition_(16366462269).jpg
+https://stockfreedom.com/downloads/antique-world-map-with-travel-journal-photographs-and-vintage-camera/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
