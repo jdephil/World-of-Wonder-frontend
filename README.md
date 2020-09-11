@@ -1,79 +1,84 @@
-Native American Room Image Credit: https://commons.wikimedia.org/wiki/File:Mesa-Arizona_Museum_of_Natural_History-Arizona_Native_American_exhibit.jpg
+# ** World of Wonder **
+<p>World of Wonder is an interactive, online application dedicated to bringing a musuem to you. There are varieties of collections to view and artifacts to learn about! With text to speech features, and an ability to take notes on artifacts as you wander throughout the rooms, curate their own exhibit by saving artifacts, and the application is user friendly for all ages! Have fun exploring this world of wonder....</p>
+
+## Approach Taken
+<p> This is a full stack web application created using MERN-auth, MongoDB, Mongoose, REACT, NodeJS and CSS. Users can enter a world of wonder as they wander through museum exhibits and click on artifacts to learn more. The application utilizes the Auckland Museum API, as well as the SpeechSynthesis API for text to speech functionality. World of Wonder incorporates full RESTful routing, MERN authentication and REACT Bootstrap modals throughout. </p>
+
+## URL
+https://condescending-spence-15bcf7.netlify.app/
+
+## User Stories
+<ul>
+  <li>As a user, I want to be able to login to my museum account.</li>
+  <li>As a user, I want to be able to click on items to find out more information</li>
+  <li>As a user, I want to be able to save items I love to my own museum room</li>
+  <li>As a user, I want to be able to look at all of the artifacts</li>
+  <li>As a user, I want to be able to take notes in a journal</li>
+</ul>
+
+## The WireFrames
+<img src='p3-wireframe.png' />
+<img src='IMG_7802.png'/>
+
+## Tech Stack
+<ul>
+  <li>REACT</li>
+  <li>MongoDB</li>
+  <li>Mongoose</li>
+  <li>CSS</li>
+  <li>NodeJS</li>
+  <li>Auckland Museum API</li>
+  <li>SpeechSynthesis</li>
+  <li>React Bootstrap</li>
+</ul>
+
+## MVP List
+<ul>
+  <li>Login/Sign Up as a User **COMPLETED**</li>
+  <li>Functionality to view artifacts/themed rooms ** COMPLETED**</li>
+  <li>Create/Read/Update/Delete Routes **COMPLETED</li>
+  <li>Text to Voice **COMPLETED** </li>
+  <li>Working app, built by whole team **COMPLETED**</li>
+  <li>Link to hosted working app in URL section of Github Repo **COMPLETED** </li>
+  <li>A README.MD File **COMPLETED**</li>
+  <li>Have an interactive frontend **COMPLETED**</li>
+  <li>Be a complete product (multiple relationships and CRUD functionality for at least a couple models) **COMPLETED** </li>
+  <li>Use a database **COMPLETED** </li>
+  <li>Implement thoughtful user stores **COMPLETED** </li>
+  <li>Have a visually impressive design **COMPLETED**</li>
+  <li>Be deployed online **COMPLETED** </li>
+</ul>
+
+## Stretch Goals
+<ul>
+  <li>Add fun activities for kids</li>
+  <li>Navigate through voice command</li>
+  <li>Journal- voice to text</li>
+  <li>Search through a glossary of artifacts</li>
+</ul>
+
+## Planning Resources
+<ul>
+  <a href="https://trello.com/b/YIL2Lihr/p3">Trello Board</a>
+  <a href="https://docs.google.com/presentation/d/1wm5_DvC-DPxnIsm1y0L-fQmSVUhBqiVp8tJv75I25Eo/edit?usp=sharing">Pitch Presentation</a>
+  <a href="https://docs.google.com/document/d/1J_s-XWz6Iq4UG1LhmY8TA4-l36-lCcBFZRidvF1UzDY/edit?usp=sharing">Schedule</a>
+  <a href="https://dbdiagram.io/d/5f1901ed1e6ca02dc1a44e40">ERD Diagram</a>
+<ul>
+
+## 
 
 
-Hover: https://www.cssmatic.com/box-shadow
 
 
-
-Image credits: 
-https://commons.wikimedia.org/wiki/File:Ceramic_Sculpture_Exhibition_(16366462269).jpg
-https://stockfreedom.com/downloads/antique-world-map-with-travel-journal-photographs-and-vintage-camera/
+## Credits/Help
+<ul>
+  <li>"https://commons.wikimedia.org/wiki/File:Ceramic_Sculpture_Exhibition_(16366462269).jpg"</li>
+  <li>JournalPage Background: 'https://www.freepik.com/photos/</li>
+  <li>background'>Background photo created by aopsan - www.freepik.com</li>
+  <li>Native American Room Image Credit: https://commons.wikimedia.org/wiki/</li>
+  <li>File:Mesa-Arizona_Museum_of_Natural_History-Arizona_Native_American_exhibit.jpg</li>
+  <li>Hover: https://www.cssmatic.com/box-shadow</li>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
